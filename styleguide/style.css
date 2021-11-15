@@ -1,0 +1,57 @@
+h1,
+h2,
+h3,
+h4,
+p {
+  font-family: Tahoma;
+}
+
+body {
+  background-color: #d9ffd9;
+}
+
+.button {
+  padding: 5px 10px;
+  margin: 5px;
+  font-size: 1rem;
+  background-color: rgb(184, 184, 184);
+  border-radius: 10px;
+  border: 1px solid rgb(145, 145, 145);
+  transition: 0.2s;
+}
+
+.btn-sign-up {
+  padding: 10px 20px;
+  font-size: 2rem;
+  background-color: #51a756;
+}
+
+.btn-sign-in {
+  padding: 10px 20px;
+  font-size: 2rem;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: rgb(223, 223, 223);
+  border: 1px solid #ccc;
+  box-shadow: 0 0 2px black;
+}
+
+.sign-up-container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: auto;
+  background-color: #2e6726;
+  padding: 10px;
+  justify-content: center;
+}
+
+.sign-up-form {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
