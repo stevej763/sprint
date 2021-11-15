@@ -52,6 +52,13 @@ I want to be redirected to the landing page,
 And I will see a message confirming I am signed out. 
 ```
 ### Home page 
+
+```
+As a user, 
+When I have signed up / signed in,
+So that I can see I am using my account,
+I would like to see my username and an icon in the navbar. 
+```
 ```
 As a user,
 So that I know the website I am using,
