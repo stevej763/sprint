@@ -1,18 +1,18 @@
 language: ruby
 services:
-- postgresql
+  - postgresql
 cache:
-- bundler
+  - bundler
 before_install:
-- nvm install --lts
-- gem install bundler
+  - nvm install --lts
+  - gem install bundler
 before_script:
-- bundle install --jobs=3 --retry=3
-- psql -c 'create database travis_ci_test;' -U postgres
-- cp config/database.yml.travis config/database.yml
-- bundle exec rake assets:precompile
+  - bundle install --jobs=3 --retry=3
+  - psql -c 'create database travis_ci_test;' -U postgres
+  - cp config/database.yml.travis config/database.yml
+  - bundle exec rake assets:precompile
 script:
-- bundle exec rspec
+  - bundle exec rspec
 deploy:
   provider: heroku
   api_key:
@@ -21,4 +21,6 @@ deploy:
   on:
     repo: stevej763/sprint
     branch: main
-  skip_cleanup: 'true'
+  skip_cleanup: "true"
+  run:
+    - "rake db:migrate"
