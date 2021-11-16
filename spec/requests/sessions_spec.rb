@@ -1,16 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe "Sessions", type: :request do
-  describe "GET /login" do
+  describe "GET /sign-in" do
     it "returns http success" do
-      get "/sessions/login"
+      get "/sign-in"
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "GET /homepage" do
     it "returns http success" do
-      get "/sessions/homepage"
+      get "/homepage"
       expect(response).to have_http_status(:success)
     end
   end

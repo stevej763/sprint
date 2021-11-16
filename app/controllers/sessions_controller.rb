@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  def login
+  def sign_in
   end
 
   def homepage

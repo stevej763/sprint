@@ -1,2 +1,5 @@
 <h1>Sessions#homepage</h1>
 <p>Find me in app/views/sessions/homepage.html.erb</p>
+<% if logged_in? %>
+  <p id="current_user"><%= current_user.username %></p>
+<% end %>
