@@ -12,6 +12,7 @@ RSpec.feature "User sign in", :type => :feature do
 
     expect(page).to have_current_path("/homepage")
     expect(find_by_id("current_user").text).to eq("user1")
+    expect(page).to have_content("You have signed in.")
   end
   scenario "User fails sign in attempt" do
     visit "/sign-in"
@@ -21,5 +22,6 @@ RSpec.feature "User sign in", :type => :feature do
     click_button "Sign in"
 
     expect(page).to have_current_path("/sign-in")
+    expect(page).to have_content("Incorrect details, please try again.")
   end
 end

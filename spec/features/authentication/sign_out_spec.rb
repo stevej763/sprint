@@ -5,17 +5,8 @@ RSpec.feature "User can sign out", :type => :feature do
     sign_in_existing_user
     click_button "Sign out"
     expect(page).to have_current_path("/")
+    expect(page).to have_content("You have signed out.")
     visit("/homepage")
     expect(page).to have_current_path("/")
-
-  end
-  scenario "User fails sign in attempt" do
-    visit "/sign-in"
-    
-    fill_in "username", with: "wrong"
-    fill_in "password", with: "wrong"
-    click_button "Sign in"
-
-    expect(page).to have_current_path("/sign-in")
   end
 end

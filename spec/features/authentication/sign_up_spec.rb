@@ -11,5 +11,6 @@ RSpec.feature "User sign up", :type => :feature do
 
     expect(page).to have_current_path("/homepage")
     expect(find_by_id("current_user").text).to eq("test")
+    expect(page).to have_content("You have signed up.")
   end
 end

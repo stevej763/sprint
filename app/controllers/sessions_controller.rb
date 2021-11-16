@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
   def sign_out
     session.delete(:user_id)
     redirect_to root_url
+    flash[:message] = "You have signed out."
   end
   
   def create
@@ -17,7 +18,7 @@ class SessionsController < ApplicationController
       redirect_to homepage_url
       flash[:message] = "You have signed in."
     else
-      render "sign_in"
+      redirect_to sign_in_url
       flash[:message] = "Incorrect details, please try again."
     end
   end

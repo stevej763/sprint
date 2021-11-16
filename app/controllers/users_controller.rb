@@ -11,5 +11,6 @@ class UsersController < ApplicationController
    :password))
     session[:user_id] = @user.id
     redirect_to homepage_url
+    flash[:message] = "You have signed up."
   end
 end
