@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/new'
+  get 'users/create'
   get 'landing_page/landing_page'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root to: "landing_page#landing_page"
 end
