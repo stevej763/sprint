@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+  skip_before_action :authorized
+
   def sign_up
     @user = User.new
   end
