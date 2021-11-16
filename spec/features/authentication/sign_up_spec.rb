@@ -5,8 +5,8 @@ RSpec.feature "user Sign up", :type => :feature do
       click_button "Sign up"
 
       expect(page).to have_current_path("/sign-up")
-      fill_in "username", with: "test"
-      fill_in "password", with: "password"
+      fill_in "user_username", with: "test"
+      fill_in "user_password", with: "password"
       click_button "Sign up"
 
       expect(page).to have_current_path("/homepage")
