@@ -9,9 +9,9 @@ RSpec.describe "Sessions", type: :request do
   end
 
   describe "GET /homepage" do
-    it "returns http success" do
+    it "returns http redirect when not logged in" do
       get "/homepage"
-      expect(response).to have_http_status(:success)
+      expect(response).to have_http_status(:redirect)
     end
   end
 

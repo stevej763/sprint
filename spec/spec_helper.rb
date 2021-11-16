@@ -6,7 +6,9 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   # Want a nice code coverage website? Uncomment this next line!
   SimpleCov::Formatter::HTMLFormatter
 ])
-SimpleCov.start
+SimpleCov.start do 
+  add_filter "spec/rails_helper"
+end 
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
