@@ -7,12 +7,4 @@ RSpec.describe "Users", type: :request do
       expect(response).to have_http_status(:success)
     end
   end
-
-  describe "GET /sign-up" do
-    it "returns http success" do
-      post "/sign-up"
-      expect(response).to have_http_status(:success)
-    end
-  end
-
 end
