@@ -5,9 +5,12 @@ class SessionsController < ApplicationController
   def sign_in
   end
 
-  def homepage
+  def sign_out
+    session.delete(:user_id)
+    redirect_to root_url
   end
 
+  
   def create
     @user = User.find_by(username: params[:username])
     if @user&.authenticate(params[:password])
@@ -18,4 +21,8 @@ class SessionsController < ApplicationController
       render "sign_in"
     end
   end
+
+  def homepage
+  end
+
 end

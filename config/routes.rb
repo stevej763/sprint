@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get 'sign-in', to: 'sessions#sign_in'
   post 'sign-in', to: 'sessions#create'
 
+  get 'sign-out', to: 'sessions#sign_out'
+
   get 'homepage', to: 'sessions#homepage'
   
   root to: "landing_page#landing_page"
