@@ -29,7 +29,7 @@ RSpec.feature "User sign in", :type => :feature do
   context "When clicking the Sprint logo in the navbar" do
     scenario "User who is not signed in is redirect to '/'" do
       visit "/sign-in"
-      click_link "Sprint"
+      click_link "logo"
       expect(page).to have_current_path("/")
     end
 
@@ -39,7 +39,7 @@ RSpec.feature "User sign in", :type => :feature do
       fill_in "password", with: "password1"
       click_button "Sign in"
       expect(page).to have_current_path("/homepage")
-      click_link "Sprint"
+      click_link "logo"
       expect(page).to have_current_path("/homepage")
     end
     
@@ -49,4 +49,5 @@ RSpec.feature "User sign in", :type => :feature do
       click_button "Sign up"
       expect(page).to have_current_path("/sign-up")
     end
+  end
 end
