@@ -24,6 +24,32 @@
   left: 0;
 }
 
+.navbar-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.sign-out-link {
+
+  text-decoration: none;
+  font-size: 1.4em;
+  color: #72EF36;
+}
+
+#current_user {
+  font-size: 1.4em;
+  color: #e75462;
+}
+
+.avatar {
+  border-style: solid;
+  border-color: #e75462;
+  border-radius: 50%;
+  height: 2.5em;
+  width: 2.5em;
+}
+
 .logo {
   text-decoration: none;
   font-size: 3em;
