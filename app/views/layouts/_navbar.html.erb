@@ -1,12 +1,12 @@
 <section class="navbar">
   <% if logged_in? %>
-    <a href="/homepage"><%= image_tag "sprint-logo.png", class: "logo", alt: "logo" %></a>
+    <a href="/homepage"><%= image_tag "sprint-logo-3.png", class: "logo", alt: "logo" %></a>
       <div class="navbar-profile">
         <p id="current_user"> <%= current_user.username %></p>
         <img class="avatar" src="https://mir-s3-cdn-cf.behance.net/user/230/d2e2ae163095399.60c76948a2fc7.png">
       </div>
         <%= link_to "Sign out", '/sign-out', method: :get, class:"sign-out-link" %>
   <% else %>
-     <a href="/homepage"><%= image_tag "sprint-logo.png", class: "logo", alt: "logo" %></a>
+     <a href="/homepage"><%= image_tag "sprint-logo-3.png", class: "logo", alt: "logo" %></a>
   <% end %>      
 </section>
