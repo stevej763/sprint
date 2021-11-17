@@ -10,10 +10,13 @@ m_to_athens_description = "In a nod to Greek history, the first marathon commemo
 m_fuji_description = "Japan’s Mt. Fuji is an active volcano about 100 kilometers southwest of Tokyo. Commonly called “Fuji-san,” it’s the country’s tallest peak, at 3,776 meters. Are you up to the challenge?"
 space_station_description = "Run to the space station"
 
-Challenge.find_or_create_by(title: 'Horcrux challenge', description: hp_description, difficulty: "Easy", distance: 7)
+harry_potter_challenge = Challenge.new(title: 'Horcrux challenge', description: hp_description, difficulty: "Easy", distance: 7)
+harry_potter_challenge.badge.attach(io: File.open('template_images/harry_potter/badge.png'), filename: 'badge.png')
+harry_potter_challenge.icon.attach(io: File.open('template_images/harry_potter/icon.png'), filename: 'icon.png')
+harry_potter_challenge.save
 
-Challenge.find_or_create_by(title: 'Marathon to Athens', description: m_to_athens_description, difficulty: "Medium", distance: 26)
+marathon_challenge = Challenge.new(title: 'Marathon to Athens', description: m_to_athens_description, difficulty: "Medium", distance: 26)
 
-Challenge.find_or_create_by(title: 'Mount Fuji', description: m_fuji_description, difficulty: "Difficult", distance: 46)
+fuji_challenge = Challenge.new(title: 'Mount Fuji', description: m_fuji_description, difficulty: "Difficult", distance: 46)
 
-Challenge.find_or_create_by(title: 'Space Station', description: space_station_description, difficulty: "Insane!", distance: 254)
+iss_challenge = Challenge.new(title: 'Space Station', description: space_station_description, difficulty: "Insane!", distance: 254)
