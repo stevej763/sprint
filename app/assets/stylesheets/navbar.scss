@@ -1,0 +1,43 @@
+.navbar {
+  width: 100%;
+  background-color: #3c3241;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  min-height: 4em;
+}
+
+.sign-out-link {
+  text-decoration: none;
+  font-size: 1.6em;
+  color: #72ef36;
+  margin-right: 3%;
+}
+
+#current_user {
+  font-size: 1.6em;
+  color: #e75462;
+  padding-right: 10%;
+}
+
+.navbar-profile {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  border-style: solid;
+  border-color: #e75462;
+  border-radius: 50%;
+  object-fit: cover;
+  height: 2.5em;
+  width: 2.5em;
+}
+
+.logo {
+  padding-right: 0;
+  width: 250px;
+  height: auto;
+  padding-left: 10px;
+}
+
