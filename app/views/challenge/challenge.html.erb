@@ -1,0 +1,26 @@
+
+<%if !@challenge.nil?%>
+    <% if @challenge.icon.attached?%>
+      <%= image_tag(@challenge.icon, class: "challenge-icon")%>
+    <%end%>
+    <h2><%= @challenge.title%></h2> 
+    <div>
+      <h3>Description</h3>
+      <p><%= @challenge.description%></p>
+    </div>
+    <div class="challenge-difficulty">
+      <h3>Difficulty</h3>
+      <p><%=@challenge.difficulty%></p>
+    </div>
+    <div class="challenge-distance">
+      <h3>Distance</h3>
+      <p><%= @challenge.distance%> Miles</p>
+    </div>
+    <% if @challenge.badge.attached?%>
+      <%= image_tag(@challenge.badge, class: "challenge-badge")%>
+    <%end%>
+<%else%>
+  <p>That challenge id does not exist</p>
+<%end%>
+
+
