@@ -13,4 +13,11 @@ RSpec.feature "User sign up", :type => :feature do
     expect(find_by_id("current_user").text).to eq("test")
     expect(page).to have_content("You have signed up.")
   end
+
+  scenario "User is on /sign-up but does have an account" do
+    visit "/sign-up"
+    expect(page).to have_content("Have an account?")
+    click_button "Sign in"
+    expect(page).to have_current_path("/sign-in")
+  end
 end
