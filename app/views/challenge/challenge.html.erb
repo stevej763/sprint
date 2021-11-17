@@ -1,4 +1,11 @@
-<%= @challenge.title%>
-<%= @challenge.description%>
-<%= @challenge.difficulty%>
-<%= @challenge.distance%>
+
+<%if !@challenge.nil?%>
+  <%= @challenge.title%>
+  <%= @challenge.description%>
+  <%= @challenge.difficulty%>
+  <%= @challenge.distance%>
+<%else%>
+  <p>That challenge id does not exist</p>
+<%end%>
+
+
