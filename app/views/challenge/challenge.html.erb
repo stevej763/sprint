@@ -1,8 +1,10 @@
 
 <%if !@challenge.nil?%>
+    <%= image_tag(@challenge.icon, class: "challenge-icon")%>
     <h2><%= @challenge.title%></h2> 
     <p><%= @challenge.description%></p>
     <p><%=@challenge.difficulty%></p>
+    <%= image_tag(@challenge.badge, class: "challenge-badge")%>
     <p><%= @challenge.distance%></p>
 <%else%>
   <p>That challenge id does not exist</p>
