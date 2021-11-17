@@ -1,10 +1,10 @@
 <section class="navbar">
   <% if logged_in? %>
-    <%= link_to "Sprint", '/homepage', method: :get %>
+    <%= link_to "Sprint", '/homepage', method: :get, class:"logo" %>
     <p id="current_user"> <%= current_user.username %></p>
     <img class="avatar" src="https://mir-s3-cdn-cf.behance.net/user/230/d2e2ae163095399.60c76948a2fc7.png">
     <%= link_to "Sign out", '/sign-out', method: :get %>
   <% else %>
-     <%= link_to "Sprint", '/', method: :get %>
+     <%= link_to "Sprint", '/', method: :get, class:"logo"%>
   <% end %>      
 </section>

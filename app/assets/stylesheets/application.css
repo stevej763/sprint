@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+ .navbar {
+  position: fixed;
+  width: 100%;
+  min-height: 5em;
+  align-items: center;
+  background-color: #3C3241;
+}
+
+.logo {
+  text-decoration: none;
+  font-size: 3em;
+  color: #72EF36;
+}
