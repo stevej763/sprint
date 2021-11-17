@@ -1,0 +1,8 @@
+challenge_one:
+  id: 1
+  title: "Test challenge"
+  icon_link:
+  description: "This is a challenge"
+  difficulty: "Easy"
+  distance: 10
+  badge_link:

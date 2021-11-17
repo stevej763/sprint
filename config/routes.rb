@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get 'sign-out', to: 'sessions#sign_out'
 
   get 'homepage', to: 'sessions#homepage'
+
+  get '/challenge/:id', to: 'challenge#challenge'
   
   root to: "landing_page#landing_page"
 end
