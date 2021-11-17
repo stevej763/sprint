@@ -1,0 +1,11 @@
+<section class="navbar">
+  <% if logged_in? %>
+    <p> <%= current_user.username %></p>
+
+
+    <img class="avatar" src="https://mir-s3-cdn-cf.behance.net/user/230/d2e2ae163095399.60c76948a2fc7.png">
+
+    <a id="sign-out" <%= link_to "Sign out", '/sign-out', method: :get %> </a>
+    
+  <% end %>      
+</section>
