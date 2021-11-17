@@ -14,20 +14,24 @@
  *= require_self
  */
  .navbar {
+  border-left: none;
+  border-right: none;
   position: fixed;
-  display: flex;
-  width: 100%;
-  min-height: 5em;
-  align-items: center;
   background-color: #3C3241;
   top: 0;
   left: 0;
+  width: 100%;
+  max-width: 100%;
+  min-height: 5em;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  z-index: 20;
 }
 
 .navbar-right {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
+  align-items: center;
 }
 
 .sign-out-link {
@@ -35,6 +39,7 @@
   text-decoration: none;
   font-size: 1.4em;
   color: #72EF36;
+  float: right;
 }
 
 #current_user {
@@ -46,6 +51,7 @@
   border-style: solid;
   border-color: #e75462;
   border-radius: 50%;
+  object-fit: cover;
   height: 2.5em;
   width: 2.5em;
 }
