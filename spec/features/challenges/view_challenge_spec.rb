@@ -1,8 +1,8 @@
 require 'rails_helper'
-RSpec.feature "Viewing challenges", :type => :feature do
+RSpec.feature "Viewing challenges:", :type => :feature do
   fixtures :users, :challenge
-  context "User goes to a challenge page" do
-    scenario "User can go to a valid challenge page." do
+  context "User goes to a" do
+    scenario "valid challenge page." do
       sign_in_existing_user
       visit("/challenge/1")
       expect(page).to have_content("Test challenge")
@@ -12,7 +12,7 @@ RSpec.feature "Viewing challenges", :type => :feature do
       expect(page).to_not have_content("That challenge id does not exist")
 
     end
-    scenario "User tries to go to invalid challenge page" do
+    scenario "n invalid challenge page" do
       sign_in_existing_user
       visit("/challenge/1000")
       expect(page).to have_content("That challenge id does not exist")
