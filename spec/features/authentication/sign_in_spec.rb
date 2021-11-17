@@ -26,10 +26,28 @@ RSpec.feature "User sign in", :type => :feature do
     expect(page).to have_content("Incorrect details, please try again.")
   end
 
-  scenario "User is on /sign-in but does not have an account" do
-    visit "/sign-in"
-    expect(page).to have_content("Don't have an account?")
-    click_button "Sign up"
-    expect(page).to have_current_path("/sign-up")
+  context "When clicking the Sprint logo in the navbar" do
+    scenario "User who is not signed in is redirect to '/'" do
+      visit "/sign-in"
+      click_link "logo"
+      expect(page).to have_current_path("/")
+    end
+
+    scenario "User who is signed in is redirect to '/homepage'" do
+      visit "/sign-in"
+      fill_in "username", with: "user1"
+      fill_in "password", with: "password1"
+      click_button "Sign in"
+      expect(page).to have_current_path("/homepage")
+      click_link "logo"
+      expect(page).to have_current_path("/homepage")
+    end
+    
+    scenario "User is on /sign-in but does not have an account" do
+      visit "/sign-in"
+      expect(page).to have_content("Don't have an account?")
+      click_button "Sign up"
+      expect(page).to have_current_path("/sign-up")
+    end
   end
 end
