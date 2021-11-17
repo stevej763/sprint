@@ -6,3 +6,5 @@
   <%= f.password_field :password, :required => true %><br>
   <%= f.submit 'Sign up' %>
 <%end%>
+<p>Have an account?</p>
+<%= button_to "Sign in", '/sign-in', method: :get %>
