@@ -1,36 +1,23 @@
-// .navbar {
-//   border-left: none;
-//   border-right: none;
-//   position: fixed;
-//   background-color: #3c3241;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   max-width: 100%;
-//   min-height: 5em;
-//   display: flex;
-//   overflow: hidden;
-//   align-items: center;
-//   z-index: 20;
-// }
-
 .navbar {
   width: 100%;
   background-color: #3c3241;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  min-height: 4em;
 }
 
 .sign-out-link {
   text-decoration: none;
   font-size: 1.4em;
   color: #72ef36;
+  margin-right: 3%;
 }
 
 #current_user {
   font-size: 1.4em;
   color: #e75462;
+  padding-right: 10%;
 }
 
 .navbar-profile {
@@ -51,4 +38,5 @@
   text-decoration: none;
   font-size: 3em;
   color: #72ef36;
+  margin-left: 3%;
 }
