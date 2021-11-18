@@ -6,29 +6,31 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #F1F1F1;
+  background-color: #f1f1f1;
   border-radius: 20px;
   width: 300px;
   height: 300px;
 }
 
-.sign-in-button, .sign-up-button {
+.sign-in-button,
+.sign-up-button {
   margin: 40px;
   padding: 12px;
   width: 160px;
-  background-color: #E75462;
+  background-color: #e75462;
   border-radius: 20px;
-  color: #F1F1F1;
+  color: #f1f1f1;
   display: block;
   font-weight: bold;
-  
 }
 
-.sign-in-button:hover, .sign-up-button:hover {
-  background-color: #F1F1F1;
-  color: #E75462;
+.sign-in-button:hover,
+.sign-up-button:hover {
+  background-color: #f1f1f1;
+  color: #e75462;
   transition: ease-in 0.3s;
-  box-shadow: 0 5px 5px rgba(168, 69, 81, .2);
+  box-shadow: 0 5px 5px rgba(168, 69, 81, 0.2);
+  cursor: pointer;
 }
 
 .landing-page-buttons {

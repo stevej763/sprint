@@ -10,7 +10,7 @@
 .challenge-heading {
   display: flex;
   align-items: center;
-  margin: 20px 50px;
+  margin: 50px 0px;
 }
 
 .challenge-icon {
@@ -23,16 +23,17 @@
 }
 
 .challenge-details {
+  width: 60%;
+  margin: 40px auto;
   background-color: #f1f1f1;
-  padding: 10px;
-  border-radius: 10px;
-  border: 2px solid #3c3241;
+  padding: 10px 80px;
+  border-radius: 25px;
 }
 
 .challenge-badge {
-  height: 275px;
-  width: 275px;
-  border-radius: 200px;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
   border: 4px solid #3c3241;
   background-color: #00485e;
   margin-right: 10px;
@@ -44,13 +45,35 @@
   text-align: center;
 }
 
+.challenge-ruler {
+  width: 80%;
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(90, 90, 90, 0.75),
+    rgba(0, 0, 0, 0)
+  );
+  margin: 50px auto;
+}
+
 .join-challenge-button {
   background-color: #e75462;
-  border: 2px solid#9e202c;
   padding: 10px 50px;
-  border-radius: 15px;
+  border-radius: 20px;
   font-size: 1.5rem;
   text-align: center;
+  color: #f1f1f1;
+  font-weight: bold;
+}
+
+.join-challenge-button:hover {
+  background-color: #f1f1f1;
+  color: #e75462;
+  transition: ease-in 0.3s;
+  box-shadow: 0 5px 5px rgba(168, 69, 81, 0.2);
+  cursor: pointer;
 }
 
 .join-button-container {

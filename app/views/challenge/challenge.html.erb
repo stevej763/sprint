@@ -1,13 +1,13 @@
 
 <main class="challenge-container">
   <%if !@challenge.nil?%>
-    <div class="challenge-heading">
-      <% if @challenge.icon.attached?%>
-        <%= image_tag(@challenge.icon, class: "challenge-icon")%>
-      <%end%>
-      <h2 class="challenge-title"><%= @challenge.title%></h2> 
-    </div>
     <div class="challenge-details">
+      <div class="challenge-heading">
+        <% if @challenge.icon.attached?%>
+          <%= image_tag(@challenge.icon, class: "challenge-icon")%>
+        <%end%>
+        <h2 class="challenge-title"><%= @challenge.title%></h2> 
+      </div>
       <div>
         <h3>Description</h3>
         <p><%= @challenge.description%></p>
@@ -20,15 +20,16 @@
         <h3>Distance</h3>
         <p><%= @challenge.distance%> Miles</p>
       </div>
-    </div>
-    <div class="challenge-badge-container">
-      <h3>Achievement Badge</h3>
-      <% if @challenge.badge.attached?%>
-      <%= image_tag(@challenge.badge, class: "challenge-badge")%>
-      <%end%>
-    </div>
-    <div class="join-button-container">
-       <button class="join-challenge-button">Join</button>
+      <hr class="challenge-ruler">
+      <div class="challenge-badge-container">
+        <h3>Achievement Badge</h3>
+        <% if @challenge.badge.attached?%>
+        <%= image_tag(@challenge.badge, class: "challenge-badge")%>
+        <%end%>
+      </div>
+      <div class="join-button-container">
+        <button class="join-challenge-button">Join</button>
+      </div>
     </div>
 
   <%else%>
