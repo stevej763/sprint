@@ -19,9 +19,16 @@
       <h3>Distance</h3>
       <p><%= @challenge.distance%> Miles</p>
     </div>
-    <% if @challenge.badge.attached?%>
+    <div class="challenge-badge-container">
+      <h3>Achievement Badge</h3>
+      <% if @challenge.badge.attached?%>
       <%= image_tag(@challenge.badge, class: "challenge-badge")%>
-    <%end%>
+      <%end%>
+    </div>
+    <div class="join-button-container">
+       <button class="join-challenge-button">Join</button>
+    </div>
+
   <%else%>
     <p>That challenge id does not exist</p>
   <%end%>
