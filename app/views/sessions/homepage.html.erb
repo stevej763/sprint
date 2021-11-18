@@ -1,13 +1,14 @@
 <section>
   <%= render partial: 'partials/flashes' %>
-
-  <% @challenges.each do |challenge|%>
-    <div class="challenge-card">
-    <% if challenge.icon.attached?%>
-      <%= image_tag(challenge.icon, class: "challenge-icon")%>
+  <div class="challenges-container">
+    <% @challenges.each do |challenge|%>
+      <div class="challenge-card">
+      <% if challenge.icon.attached?%>
+        <%= image_tag(challenge.icon, class: "homepage-challenge-icon")%>
+      <%end%>
+        <%= button_to challenge.title, "/challenge/#{challenge.id}", method: :get, class: "homepage-challenge-name" %>
+      </div> 
     <%end%>
-      <%= button_to challenge.title, "/challenge/#{challenge.id}", method: :get %>
-     </div> 
-  <%end%>
+  </div>
 
 </section>
