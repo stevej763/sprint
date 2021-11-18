@@ -24,6 +24,7 @@ Purple: #3c3241
 
 html,
 body {
+  height: 100%;
   margin: 0;
   background-color: #dbdadb;
 }
