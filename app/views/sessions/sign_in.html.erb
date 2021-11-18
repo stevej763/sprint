@@ -1,14 +1,16 @@
-<section>
-   <h1>Sign in</h1>
-   <%= form_tag '/sign-in' do %>
-      <%= label_tag :username%>
-      <%= text_field_tag :username, params[:username], :required => true %>
-      <%= label_tag :password%>
-      <%= password_field_tag :password, params[:password], :required => true %>
-      <%= submit_tag "Sign in"%>
-      <%= render partial: 'partials/flashes' %>
-   <%end%>
-   <p>Don't have an account?</p>
-   <%= button_to "Sign up", '/sign-up', method: :get %>
+<section class="auth-page-container">
+   <div class="auth-contianer">
+      <h1 class="auth-header">Sign in</h1>
+         <%= form_tag '/sign-in', class: "sign-in-form" do %>
+            <%= label_tag :username %>
+            <%= text_field_tag :username, params[:username], :required => true,  class: "sign-in-input" %>
+            <%= label_tag :password %>
+            <%= password_field_tag :password, params[:password], :required => true, class: "sign-in-input"  %>
+            <%= submit_tag "Sign in", class:"sign-in-button sign-in-page-button"%>
+            <%= render partial: 'partials/flashes' %>
+         <%end%>
+      <p>Don't have an account?</p>
+      <%= button_to "Sign up", '/sign-up', method: :get, class:"sign-up-button sign-up-page-button" %>
+   </div>
 </section>
 

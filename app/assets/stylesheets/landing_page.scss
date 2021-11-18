@@ -1,3 +1,45 @@
 // Place all the styles related to the LandingPage controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.landing-page-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  width: 300px;
+  height: 70%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.auth-contianer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f1f1;
+  border-radius: 25px;
+  margin: auto;
+  padding: 5px 30px;
+}
+
+.sign-in-button,
+.sign-up-button {
+  margin: 20px;
+  padding: 12px;
+  width: 160px;
+  background-color: #e75462;
+  border-radius: 20px;
+  color: #f1f1f1;
+  display: block;
+  font-weight: bold;
+}
+
+.sign-in-button:hover,
+.sign-up-button:hover {
+  background-color: #f1f1f1;
+  color: #e75462;
+  transition: ease-in 0.3s;
+  box-shadow: 0 5px 5px rgba(168, 69, 81, 0.2);
+  cursor: pointer;
+}

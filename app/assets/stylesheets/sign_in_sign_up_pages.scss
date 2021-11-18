@@ -1,0 +1,55 @@
+.sign-in-layout,
+.sign-up-layout {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f1f1f1;
+  border-radius: 20px;
+  width: 400px;
+  height: 560px;
+  text-align: center;
+}
+
+.auth-page-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  width: 300px;
+  height: 90%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.sign-in-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.new_user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-header {
+  margin: 0;
+  font-size: 1.8em;
+  padding: 20px;
+}
+
+.sign-in-input,
+.sign-up-input {
+  margin-bottom: 10px;
+}
+
+.profile-image-selector {
+  text-align: center;
+  padding-top: 10px;
+  width: 80%;
+  margin: auto;
+}
