@@ -3,7 +3,7 @@
   background-color: #3c3241;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   min-height: 4em;
 }
 
@@ -11,7 +11,8 @@
   text-decoration: none;
   font-size: 1.6em;
   color: #72ef36;
-  margin-right: 3%;
+  margin-right: 20px;
+  margin-left: 20px;
 }
 
 #current_user {
@@ -38,6 +39,6 @@
   padding-right: 0;
   width: 250px;
   height: auto;
-  padding-left: 10px;
+  margin-left: 20px;
 }
 
