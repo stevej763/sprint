@@ -1,9 +1,7 @@
 <section class="landing-page">
-  <div id="sign-in-button">
-    <%= link_to "Sign in", '/sign-in', method: :get%>
-  </div>
-  <div id="sign-up-button">
-  <%= link_to "Sign up", '/sign-up', method: :get%>
+  <div class="landing-page-buttons">
+    <%= button_to "Sign in", '/sign-in', method: :get, class:"sign-in-button" %>
+    <%= button_to "Sign up", '/sign-up', method: :get, class:"sign-up-button"%>
   </div>
 </section>
 <%= render partial: 'partials/flashes' %>
