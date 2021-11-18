@@ -3,4 +3,5 @@ class User < ApplicationRecord
   validates :password_digest, presence: true
   has_secure_password
   has_one_attached :profile_image
+  has_one :active_challenge
 end
