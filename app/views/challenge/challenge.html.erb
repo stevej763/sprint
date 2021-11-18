@@ -7,17 +7,19 @@
       <%end%>
       <h2 class="challenge-title"><%= @challenge.title%></h2> 
     </div>
-    <div>
-      <h3>Description</h3>
-      <p><%= @challenge.description%></p>
-    </div>
-    <div class="challenge-difficulty">
-      <h3>Difficulty</h3>
-      <p><%=@challenge.difficulty%></p>
-    </div>
-    <div class="challenge-distance">
-      <h3>Distance</h3>
-      <p><%= @challenge.distance%> Miles</p>
+    <div class="challenge-details">
+      <div>
+        <h3>Description</h3>
+        <p><%= @challenge.description%></p>
+      </div>
+      <div class="challenge-difficulty">
+        <h3>Difficulty</h3>
+        <p><%=@challenge.difficulty%></p>
+      </div>
+      <div class="challenge-distance">
+        <h3>Distance</h3>
+        <p><%= @challenge.distance%> Miles</p>
+      </div>
     </div>
     <div class="challenge-badge-container">
       <h3>Achievement Badge</h3>
