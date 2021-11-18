@@ -14,19 +14,18 @@
 
 .auth-contianer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #f1f1f1;
   border-radius: 25px;
   margin: auto;
-}
-
-.landing-page-buttons {
+  padding: 5px 30px;
 }
 
 .sign-in-button,
 .sign-up-button {
-  margin: 40px;
+  margin: 20px;
   padding: 12px;
   width: 160px;
   background-color: #e75462;
