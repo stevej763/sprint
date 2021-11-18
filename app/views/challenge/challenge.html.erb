@@ -1,9 +1,12 @@
 
-<%if !@challenge.nil?%>
-    <% if @challenge.icon.attached?%>
-      <%= image_tag(@challenge.icon, class: "challenge-icon")%>
-    <%end%>
-    <h2><%= @challenge.title%></h2> 
+<main class="challenge-container">
+  <%if !@challenge.nil?%>
+    <div class="challenge-heading">
+      <% if @challenge.icon.attached?%>
+        <%= image_tag(@challenge.icon, class: "challenge-icon")%>
+      <%end%>
+      <h2 class="challenge-title"><%= @challenge.title%></h2> 
+    </div>
     <div>
       <h3>Description</h3>
       <p><%= @challenge.description%></p>
@@ -19,8 +22,10 @@
     <% if @challenge.badge.attached?%>
       <%= image_tag(@challenge.badge, class: "challenge-badge")%>
     <%end%>
-<%else%>
-  <p>That challenge id does not exist</p>
-<%end%>
+  <%else%>
+    <p>That challenge id does not exist</p>
+  <%end%>
 
+
+</main>
 
