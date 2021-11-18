@@ -4,9 +4,9 @@
       <div class="navbar-profile">
         <p id="current_user"> <%= current_user.username %></p>
         <% if current_user.profile_image.attached? %>
-          <img class="avatar" src="<%=(url_for(current_user.profile_image))%>">
+          <img class="profile_image" src="<%=(url_for(current_user.profile_image))%>">
         <%else%>
-          <img class="avatar" src="https://mir-s3-cdn-cf.behance.net/user/230/d2e2ae163095399.60c76948a2fc7.png">
+          <img class="profile_image" src="https://mir-s3-cdn-cf.behance.net/user/230/d2e2ae163095399.60c76948a2fc7.png">
         <%end%>
         <%= button_to "Sign out", '/sign-out', method: :get, class:"sign-out-link" %>
       </div>
