@@ -20,4 +20,18 @@ RSpec.feature "User sign up", :type => :feature do
     click_button "Sign in"
     expect(page).to have_current_path("/sign-in")
   end
+
+  scenario "User attaches image on sign up" do
+    visit('/')
+    click_button("Sign up")
+    expect(page).to have_current_path("/sign-up")
+    fill_in "user_username", with: "test"
+    fill_in "user_password", with: "password"
+    attach_file('user_profile_image', File.absolute_path('./template_images/harry_potter/badge.png'))
+    click_button "Sign up"
+    expect(page).to have_current_path("/homepage")
+    expect(find_by_id("current_user").text).to eq("test")
+    expect(page).to have_selector("#user-upload")
+  end
+
 end
