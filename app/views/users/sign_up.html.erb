@@ -6,7 +6,7 @@
     <%= f.label :password%><br>
     <%= f.password_field :password, :required => true, class:"sign-up-input" %><br>
     <%= f.label :profile_image %><br>
-    <%= f.file_field :avatar, accept: 'image/png, image/gif, image/jpeg, image/jpg', class:"profile-image-selector"%><br>
+    <%= f.file_field :profile_image, accept: 'image/png, image/gif, image/jpeg, image/jpg', class:"profile-image-selector"%><br>
     <%= f.submit 'Sign up', class:"sign-up-button sign-up-page-button" %>
   <%end%>
   <p>Have an account?</p>
