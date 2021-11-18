@@ -1,12 +1,14 @@
-<section>
-  <h1>Sign up</h1>
+<section class="sign-up-layout">
+  <h1 class="sign-up-header">Sign up</h1>
   <%= form_for @user, url: "/sign-up" do |f|%>
     <%= f.label :username%><br>
-    <%= f.text_field :username, :required => true %><br>
+    <%= f.text_field :username, :required => true, class:"sign-up-input" %><br>
     <%= f.label :password%><br>
-    <%= f.password_field :password, :required => true %><br>
-    <%= f.submit 'Sign up' %>
+    <%= f.password_field :password, :required => true, class:"sign-up-input" %><br>
+    <%= f.label :profile_image %><br>
+    <%= f.file_field :avatar, accept: 'image/png, image/gif, image/jpeg, image/jpg', class:"profile-image-selector"%><br>
+    <%= f.submit 'Sign up', class:"sign-up-button sign-up-page-button" %>
   <%end%>
   <p>Have an account?</p>
-  <%= button_to "Sign in", '/sign-in', method: :get %>
+  <%= button_to "Sign in", '/sign-in', method: :get, class:"sign-in-button sign-in-page-button" %>
 </section>
