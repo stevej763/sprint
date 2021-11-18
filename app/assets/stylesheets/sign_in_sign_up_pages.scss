@@ -1,4 +1,4 @@
-.sign-in-page {
+.sign-in-layout, .sign-up-layout {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -6,18 +6,18 @@
   background-color: #F1F1F1;
   border-radius: 20px;
   width: 400px;
-  height: 500px;
+  height: 560px;
   text-align: center;
 }
 
-.sign-in-input {
+.sign-in-input, .sign-up-input {
   width: 200px;
   margin: 12px;
   border-radius: 25px;
   height: 22px;
 }
 
-.sign-in-header {
+.sign-in-header, .sign-up-header {
   font-size: 1.8em;
   padding: 20px;
 }
@@ -25,4 +25,9 @@
 .sign-in-page-button, .sign-up-page-button {
   margin-top: 30px;
   margin-left: 120px;
+}
+
+.profile-image-selector {
+  margin-top: 16px;
+  margin-left: 80px;
 }
