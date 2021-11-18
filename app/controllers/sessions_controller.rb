@@ -24,6 +24,7 @@ class SessionsController < ApplicationController
   end
 
   def homepage
+    @challenges = Challenge.all
   end
 
 end

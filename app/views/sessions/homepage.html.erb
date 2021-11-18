@@ -1,3 +1,19 @@
-<section>
+<main class="homepage-container">
   <%= render partial: 'partials/flashes' %>
-</section>
+  <div class="homepage-header">
+    <h2>Choose your challenge</h2>
+  </div>
+  <div class="challenges-container">
+    <% @challenges.each do |challenge|%>
+      <div class="challenge-card">
+      <% if challenge.icon.attached?%>
+        <%= image_tag(challenge.icon, class: "homepage-challenge-icon")%>
+      <%end%>
+        <p class="challange-card-detail">Difficulty: <%= challenge.difficulty%></p>
+        <p class="challange-card-detail">Distance: <%= challenge.distance%> miles</p>
+        <%= button_to challenge.title, "/challenge/#{challenge.id}", method: :get, class: "homepage-challenge-name" %>
+      </div> 
+    <%end%>
+  </div>
+
+</main>
