@@ -1,0 +1,41 @@
+
+<main class="challenge-container">
+  <%if !@challenge.nil?%>
+    <div class="challenge-details">
+      <div class="challenge-heading">
+        <% if @challenge.icon.attached?%>
+          <%= image_tag(@challenge.icon, class: "challenge-icon")%>
+        <%end%>
+        <h2 class="challenge-title"><%= @challenge.title%></h2> 
+      </div>
+      <div>
+        <h3>Description</h3>
+        <p><%= @challenge.description%></p>
+      </div>
+      <div class="challenge-difficulty">
+        <h3>Difficulty</h3>
+        <p><%=@challenge.difficulty%></p>
+      </div>
+      <div class="challenge-distance">
+        <h3>Distance</h3>
+        <p><%= @challenge.distance%> Miles</p>
+      </div>
+      <hr class="challenge-ruler">
+      <div class="challenge-badge-container">
+        <h3>Achievement Badge</h3>
+        <% if @challenge.badge.attached?%>
+        <%= image_tag(@challenge.badge, class: "challenge-badge")%>
+        <%end%>
+      </div>
+      <div class="join-button-container">
+        <button class="join-challenge-button">Join</button>
+      </div>
+    </div>
+
+  <%else%>
+    <p>That challenge id does not exist</p>
+  <%end%>
+
+
+</main>
+

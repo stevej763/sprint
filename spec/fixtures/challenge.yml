@@ -1,0 +1,6 @@
+challenge_one:
+  id: 1
+  title: "Test challenge"
+  description: "This is a challenge"
+  difficulty: "Easy"
+  distance: 10

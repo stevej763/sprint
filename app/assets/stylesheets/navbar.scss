@@ -9,10 +9,16 @@
 
 .sign-out-link {
   text-decoration: none;
+  background-color: transparent;
+  border: none;
   font-size: 1.6em;
   color: #72ef36;
   margin-right: 20px;
   margin-left: 20px;
+}
+
+.sign-out-link:hover {
+  cursor: pointer;
 }
 
 #current_user {
@@ -24,6 +30,7 @@
 .navbar-profile {
   display: flex;
   align-items: center;
+  padding-right: 30px;
 }
 
 .avatar {
@@ -41,4 +48,3 @@
   height: auto;
   margin-left: 20px;
 }
-
