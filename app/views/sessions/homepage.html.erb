@@ -10,7 +10,7 @@
         <%= image_tag(challenge.icon, class: "homepage-challenge-icon")%>
       <%end%>
         <p class="challange-card-detail">Difficulty: <%= challenge.difficulty%></p>
-        <p class="challange-card-detail">Distance: <%= challenge.distance%></p>
+        <p class="challange-card-detail">Distance: <%= challenge.distance%> miles</p>
         <%= button_to challenge.title, "/challenge/#{challenge.id}", method: :get, class: "homepage-challenge-name" %>
       </div> 
     <%end%>
