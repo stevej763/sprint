@@ -1,14 +1,16 @@
-<section class="sign-up-layout">
-  <h1 class="sign-up-header">Sign up</h1>
-  <%= form_for @user, url: "/sign-up" do |f|%>
-    <%= f.label :username%><br>
-    <%= f.text_field :username, :required => true, class:"sign-up-input" %><br>
-    <%= f.label :password%><br>
-    <%= f.password_field :password, :required => true, class:"sign-up-input" %><br>
-    <%= f.label :profile_image %><br>
-    <%= f.file_field :profile_image, accept: 'image/png, image/gif, image/jpeg, image/jpg', class:"profile-image-selector"%><br>
-    <%= f.submit 'Sign up', class:"sign-up-button sign-up-page-button" %>
-  <%end%>
-  <p>Have an account?</p>
-  <%= button_to "Sign in", '/sign-in', method: :get, class:"sign-in-button sign-in-page-button" %>
+<section class="auth-page-container">
+  <div class="auth-contianer">
+    <h1 class="auth-header">Sign up</h1>
+    <%= form_for @user, url: "/sign-up", class: "sign-up-form" do |f|%>
+      <%= f.label :username%>
+      <%= f.text_field :username, :required => true, class:"sign-up-input" %>
+      <%= f.label :password%>
+      <%= f.password_field :password, :required => true, class:"sign-up-input" %>
+      <%= f.label :profile_image %>
+      <%= f.file_field :profile_image, accept: 'image/png, image/gif, image/jpeg, image/jpg', class:"profile-image-selector"%>
+      <%= f.submit 'Sign up', class:"sign-up-button sign-up-page-button" %>
+    <%end%>
+    <p>Have an account?</p>
+    <%= button_to "Sign in", '/sign-in', method: :get, class:"sign-in-button sign-in-page-button" %>
+  </div>
 </section>

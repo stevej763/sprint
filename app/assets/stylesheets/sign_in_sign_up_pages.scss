@@ -11,28 +11,51 @@
   text-align: center;
 }
 
-.sign-in-input,
-.sign-up-input {
-  width: 200px;
-  margin: 12px;
-  border-radius: 25px;
-  height: 22px;
-  text-align: center;
+.auth-page-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  width: 350px;
+  height: 90%;
+  margin: auto;
+  margin-top: 20px;
 }
 
-.sign-in-header,
-.sign-up-header {
+.sign-in-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 25px;
+}
+
+.new_user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-header {
+  margin: 10px 10px;
   font-size: 1.8em;
   padding: 20px;
 }
 
-.sign-in-page-button,
-.sign-up-page-button {
-  margin-top: 30px;
-  margin-left: 120px;
+.sign-in-input,
+.sign-up-input {
+  margin-bottom: 10px;
+  margin-top: 5px;
+  border-radius: 25px;
+  font-size: 1rem;
+  padding: 3px 0;
+  text-align: center;
 }
 
 .profile-image-selector {
-  margin-top: 16px;
-  margin-left: 80px;
+  text-align: center;
+  padding-top: 10px;
+  width: 80%;
+  margin: auto;
 }
