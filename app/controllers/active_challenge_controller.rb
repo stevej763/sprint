@@ -10,6 +10,14 @@ class ActiveChallengeController < ApplicationController
     active_challenge = ActiveChallenge.create(challenge_id: params.require(:challenge_id), user_id: current_user.id)
     redirect_to active_challenge_url
   end
+  
+  def add_distance
+    @active_challenge_id = active_challenge_id
+  end 
+  
+  def update_distance
+    puts 'end point hit'
+  end   
 
   private 
 
@@ -23,6 +31,10 @@ class ActiveChallengeController < ApplicationController
 
   def remaining_distance
     @challenge.distance - current_user.active_challenge.current_distance
+  end
+
+  def active_challenge_id
+    params.require(:id)
   end
 
 end

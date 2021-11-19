@@ -24,10 +24,7 @@
       </div>
     </div>
     <div class="add-distance-container">
-      <%= form_tag  '/add-distance' do |form| %>
-        <%= hidden_field_tag :active_challenge_id, params[:active_challenge_id], value: @active_challenge.id %>
-        <%= submit_tag "Add distance", class:"add-distance-button"%>
-      <% end %>
+      <%= button_to "Add distance", "/add-distance/#{@active_challenge.id}", method: :get, class: "add-distance-button" %>
     </div>
   </div>
 </main>

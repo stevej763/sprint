@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'active_challenge/create'
   post 'sign-up', to: 'users#create'
   get 'sign-up', to: 'users#sign_up'
 
@@ -14,6 +13,10 @@ Rails.application.routes.draw do
 
   get 'active-challenge', to: 'active_challenge#active_challenge'
   post 'join-challenge', to: 'active_challenge#create'
+  
+  get'add-distance/:id', to: 'active_challenge#add_distance'
+  post'add-distance', to: 'active_challenge#update_distance'
+
 
   root to: "landing_page#landing_page"
 end
