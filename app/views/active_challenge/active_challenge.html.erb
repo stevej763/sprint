@@ -1,16 +1,20 @@
-<h1>Current Challenge</h1>
-<div class="challenge-heading">
-  <% if @challenge.icon.attached?%>
-    <%= image_tag(@challenge.icon, class: "challenge-icon")%>
-  <%end%>
-  <h2 class="challenge-title"><%= @challenge.title%></h2> 
-</div>
-<p>Total distance: <%= @challenge.distance%> miles</p>
-<p>Current distance: <%= @active_challenge.current_distance%> miles</p>
-<p>Remaining distance: <%= @remaining_distance %> miles</p>
-<div class="add-distance-container">
-  <%= form_tag  '/add-distance' do |form| %>
-    <%= hidden_field_tag :active_challenge_id, params[:active_challenge_id], value: @active_challenge.id %>
-    <%= submit_tag "Add distance", class:"add-distance-button"%>
-  <% end %>
-</div>
+<main class="challenge-container">
+  <h1 class="active-challenge-header">Active Challenge</h1>
+  <div class="challenge-details">
+    <div class="challenge-heading">
+      <% if @challenge.icon.attached?%>
+        <%= image_tag(@challenge.icon, class: "challenge-icon")%>
+      <%end%>
+      <h2 class="challenge-title"><%= @challenge.title%></h2> 
+    </div>
+    <p>Total distance: <%= @challenge.distance%> miles</p>
+    <p>Current distance: <%= @active_challenge.current_distance%> miles</p>
+    <p>Remaining distance: <%= @remaining_distance %> miles</p>
+    <div class="add-distance-container">
+      <%= form_tag  '/add-distance' do |form| %>
+        <%= hidden_field_tag :active_challenge_id, params[:active_challenge_id], value: @active_challenge.id %>
+        <%= submit_tag "Add distance", class:"add-distance-button"%>
+      <% end %>
+    </div>
+  </div>
+</main>
