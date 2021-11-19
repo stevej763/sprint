@@ -1,10 +1,12 @@
 <main class="challenge-container">
-  <h1 class="active-challenge-header">Active Challenge</h1>
-  <div class="challenge-details">
-    <div class="challenge-heading">
+  <h1 class="active-challenge-page-title">Active Challenge</h1>
+  <div class="active-challenge-details">
+    <div class="active-challenge-heading">
+      <div>
       <% if @challenge.icon.attached?%>
         <%= image_tag(@challenge.icon, class: "challenge-icon")%>
       <%end%>
+      </div>
       <h2 class="challenge-title"><%= @challenge.title%></h2> 
     </div>
     <div class="active-challenge-rows">
