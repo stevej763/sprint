@@ -18,17 +18,20 @@
       </div>
       <div class="challenge-distance">
         <h3>Distance</h3>
-        <p><%= @challenge.distance%> Miles</p>
+        <p><%= @challenge.distance%> miles</p>
       </div>
       <hr class="challenge-ruler">
       <div class="challenge-badge-container">
         <h3>Achievement Badge</h3>
         <% if @challenge.badge.attached?%>
-        <%= image_tag(@challenge.badge, class: "challenge-badge")%>
+         <%= image_tag(@challenge.badge, class: "challenge-badge")%>
         <%end%>
       </div>
       <div class="join-button-container">
-        <button class="join-challenge-button">Join</button>
+        <%= form_tag  '/join-challenge' do |form| %>
+          <%= hidden_field_tag :challenge_id, params[:challenge_id], value: @challenge.id %>
+          <%= submit_tag "Join", class:"join-challenge-button"%>
+        <% end %>
       </div>
     </div>
 
