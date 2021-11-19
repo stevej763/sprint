@@ -18,7 +18,7 @@ class ActiveChallengeController < ApplicationController
   
   def update_distance
     update_challenge_distance(params.require(:distance), params.require(:active_challenge_id))
-    redirect_to active_challenge_url
+    
   end   
 
   private 
@@ -40,8 +40,16 @@ class ActiveChallengeController < ApplicationController
   end
 
   def update_challenge_distance(distance, active_challenge_id)
-    challenge = ActiveChallenge.find_by(id: active_challenge_id)
-    new_distance = challenge.current_distance + distance.to_f
-    challenge.update(current_distance: new_distance)
+    parent_challenge =  find_linked_challenge
+    active_challenge = ActiveChallenge.find_by(id: active_challenge_id)
+    new_distance = active_challenge.current_distance + distance.to_f
+    if new_distance >= parent_challenge.distance
+      active_challenge.update(current_distance: parent_challenge.distance)
+      redirect_to "/completed-challenge/#{active_challenge_id}"
+    else   
+      active_challenge.update(current_distance: new_distance)
+      redirect_to active_challenge_url
+    end   
   end
+
 end
