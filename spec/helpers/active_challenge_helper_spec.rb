@@ -11,3 +11,8 @@ require 'rails_helper'
 #   end
 # end
 
+def sign_up_for_challenge
+  click_button "Test challenge"
+  expect(page).to have_current_path('/challenge/1')
+  click_button "Join"
+end

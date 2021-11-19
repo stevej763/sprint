@@ -12,15 +12,15 @@
     <div class="active-challenge-rows">
       <div class="active-challenge-row">
         <p>Total distance: </p> 
-        <p><%= @challenge.distance%> miles</p>
+        <p id="total-distance"><%= @challenge.distance%> miles</p>
       </div>
       <div class="active-challenge-row">
         <p>Current distance: </p> 
-        <p><%= @active_challenge.current_distance%> miles</p>
+        <p id="current-distance"><%= @active_challenge.current_distance%> miles</p>
       </div>
       <div class="active-challenge-row">
         <p>Remaining distance: </p>
-        <p><%= @remaining_distance %> miles</p>
+        <p id="remaining-distance"><%= @remaining_distance %> miles</p>
       </div>
     </div>
     <div class="add-distance-container">
