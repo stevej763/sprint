@@ -16,7 +16,7 @@ class ActiveChallengeController < ApplicationController
   end 
   
   def update_distance
-    puts 'end point hit'
+    redirect_to active_challenge_url
   end   
 
   private 
