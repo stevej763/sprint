@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   skip_before_action :authorized
 
   def sign_up
+    redirect_logged_in_users
     @user = User.new
   end
 
