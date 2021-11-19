@@ -1,5 +1,11 @@
 class CompletedChallengeController < ApplicationController
   def complete
-    puts params
+    @challenge = Challenge.find_by(id: challenge_id)
   end
+end
+
+private 
+
+def challenge_id
+  params.require(:id)
 end

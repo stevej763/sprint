@@ -44,8 +44,8 @@ class ActiveChallengeController < ApplicationController
     active_challenge = ActiveChallenge.find_by(id: active_challenge_id)
     new_distance = active_challenge.current_distance + distance.to_f
     if new_distance >= parent_challenge.distance
-      active_challenge.update(current_distance: parent_challenge.distance)
-      redirect_to "/completed-challenge/#{active_challenge_id}"
+      current_challenge.destroy
+      redirect_to "/completed-challenge/#{parent_challenge.id}"
     else   
       active_challenge.update(current_distance: new_distance)
       redirect_to active_challenge_url
