@@ -9,16 +9,6 @@
   border-radius: 25px;
 }
 
-.add-distance-button {
-  background-color: #e75462;
-  padding: 10px 50px;
-  border-radius: 40px;
-  font-size: 1.5rem;
-  text-align: center;
-  color: #f1f1f1;
-  font-weight: bold;
-}
-
 .active-challenge-page-title {
   text-align: center;
   padding-top: 20px;
@@ -30,6 +20,17 @@
   flex-direction: column;
   text-align: center;
   padding-top: 40px;
+}
+
+.add-distance-button {
+  background-color: #e75462;
+  padding: 10px 50px;
+  border-radius: 40px;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #f1f1f1;
+  font-weight: bold;
+  margin-bottom: 30px;
 }
 
 .add-distance-button:hover {

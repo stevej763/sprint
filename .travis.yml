@@ -14,13 +14,25 @@ before_script:
 script:
   - bundle exec rspec
 deploy:
-  provider: heroku
-  cleanup: "true"
-  api_key:
-    secure: Ziij6u1cCFufR2IK+jmPQ1/K7HZX/dO/AvSfQQsr+eZK1h1P5f+YdRm6ufzjARbwocenLIvnZ+sqxoHZK/YNHH59qbzdWh3Sm2jFcq7izahgT1lDgZAnULOVhopCJhomkRMTWV/5HKsDW4EC8yAx3Xm7Aox6sA8C/68Hqb1kFNfnMH/CGeCzlcKkTGZBd3DXzcYKDIpd/ymovqY01UfYXfHe1iQoPlZVjS5c/lQcg713R8WuhdJwcaLW8B3SpF8/quhleDk0nWoVZqksluNXA+bcSTArHkypbWAILiQLBFpj69y+57DHgtBwtj4Wj30YISFAnOgkrJm+FPv5EW6n4MCxS5UgyayzMyGx7FtjG1V7a0DARjQG90HB6VgPcMABNwyYWF4QHUzdtFVNz4t62YSliOSgoWEeQarwG5zjjce83J4LMZO2Yf5QkadVgxtk+qynNvkBejChsKm91aq/O2+2xNPTpq64AKGXQyUHYSTqOR2HPls4/M2CzZ9Q7JtIUUGciYz+yWXic2+JYFY7QMIFxVe7SNsZUEfC839y95wGKfVX2WnqC9C/j+kP0hdYPn6uP3u7JrMmscrB+YnXgWQk3OZ7Jrf0BwgXbDvyUncQ7DxcU6y50qmgBhaHlDoU4amdgA/d6Ic2ubbo19NzyGGW/fdb66WLurrTScr5Aq4=
-  app: sprint-app-2021
-  on:
-    repo: stevej763/sprint
-    branch: main
-  run:
-    - "rake db:migrate"
+  - provider: heroku
+    cleanup: "true"
+    api_key:
+      secure: Ziij6u1cCFufR2IK+jmPQ1/K7HZX/dO/AvSfQQsr+eZK1h1P5f+YdRm6ufzjARbwocenLIvnZ+sqxoHZK/YNHH59qbzdWh3Sm2jFcq7izahgT1lDgZAnULOVhopCJhomkRMTWV/5HKsDW4EC8yAx3Xm7Aox6sA8C/68Hqb1kFNfnMH/CGeCzlcKkTGZBd3DXzcYKDIpd/ymovqY01UfYXfHe1iQoPlZVjS5c/lQcg713R8WuhdJwcaLW8B3SpF8/quhleDk0nWoVZqksluNXA+bcSTArHkypbWAILiQLBFpj69y+57DHgtBwtj4Wj30YISFAnOgkrJm+FPv5EW6n4MCxS5UgyayzMyGx7FtjG1V7a0DARjQG90HB6VgPcMABNwyYWF4QHUzdtFVNz4t62YSliOSgoWEeQarwG5zjjce83J4LMZO2Yf5QkadVgxtk+qynNvkBejChsKm91aq/O2+2xNPTpq64AKGXQyUHYSTqOR2HPls4/M2CzZ9Q7JtIUUGciYz+yWXic2+JYFY7QMIFxVe7SNsZUEfC839y95wGKfVX2WnqC9C/j+kP0hdYPn6uP3u7JrMmscrB+YnXgWQk3OZ7Jrf0BwgXbDvyUncQ7DxcU6y50qmgBhaHlDoU4amdgA/d6Ic2ubbo19NzyGGW/fdb66WLurrTScr5Aq4=
+    app: sprint-app-2021
+    on:
+      repo: stevej763/sprint
+      branch: main
+    run:
+      - "rake db:migrate"
+      - "rake db:seed"
+  - provider: heroku
+    cleanup: "true"
+    api_key:
+      secure: Ziij6u1cCFufR2IK+jmPQ1/K7HZX/dO/AvSfQQsr+eZK1h1P5f+YdRm6ufzjARbwocenLIvnZ+sqxoHZK/YNHH59qbzdWh3Sm2jFcq7izahgT1lDgZAnULOVhopCJhomkRMTWV/5HKsDW4EC8yAx3Xm7Aox6sA8C/68Hqb1kFNfnMH/CGeCzlcKkTGZBd3DXzcYKDIpd/ymovqY01UfYXfHe1iQoPlZVjS5c/lQcg713R8WuhdJwcaLW8B3SpF8/quhleDk0nWoVZqksluNXA+bcSTArHkypbWAILiQLBFpj69y+57DHgtBwtj4Wj30YISFAnOgkrJm+FPv5EW6n4MCxS5UgyayzMyGx7FtjG1V7a0DARjQG90HB6VgPcMABNwyYWF4QHUzdtFVNz4t62YSliOSgoWEeQarwG5zjjce83J4LMZO2Yf5QkadVgxtk+qynNvkBejChsKm91aq/O2+2xNPTpq64AKGXQyUHYSTqOR2HPls4/M2CzZ9Q7JtIUUGciYz+yWXic2+JYFY7QMIFxVe7SNsZUEfC839y95wGKfVX2WnqC9C/j+kP0hdYPn6uP3u7JrMmscrB+YnXgWQk3OZ7Jrf0BwgXbDvyUncQ7DxcU6y50qmgBhaHlDoU4amdgA/d6Ic2ubbo19NzyGGW/fdb66WLurrTScr5Aq4=
+    app: sprint-staging-2021
+    on:
+      repo: stevej763/sprint
+      branch: staging
+    run:
+      - "rake db:migrate"
+      - "rake db:seed"

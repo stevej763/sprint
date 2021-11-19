@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
   skip_before_action :authorized, only: [:sign_in, :create]
   
   def sign_in
+    redirect_logged_in_users
   end
 
   def sign_out

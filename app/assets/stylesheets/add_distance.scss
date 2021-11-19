@@ -1,0 +1,56 @@
+.add-distance-container {
+  width: 80%;
+  margin: auto;
+}
+
+.add-distance-details {
+  width: 400px;
+  margin: 40px auto;
+  background-color: #f1f1f1;
+  padding: 10px 80px;
+  padding-bottom: 80px;
+  border-radius: 25px;
+}
+
+.add-distance-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+.distance-input-container {
+  padding: 20px;
+}
+
+.distance-input {
+  font-size: 1rem;
+  border-radius: 25px;
+  text-align: center;
+  padding: 5px;
+}
+
+.add-distance-text {
+  font-size: 1.2rem;
+  margin: 25px auto;
+}
+
+.update-distance-button {
+  background-color: #e75462;
+  padding: 10px 50px;
+  border-radius: 40px;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #f1f1f1;
+  font-weight: bold;
+  margin: 40px;
+}
+
+.update-distance-button:hover {
+  background-color: #f1f1f1;
+  color: #e75462;
+  transition: ease-in 0.3s;
+  box-shadow: 0 5px 5px rgba(168, 69, 81, 0.2);
+  cursor: pointer;
+}
