@@ -1,0 +1,35 @@
+.add-distance-container {
+  width: 80%;
+  margin: auto;
+}
+
+.add-distance-details {
+  width: 60%;
+  margin: 40px auto;
+  background-color: #f1f1f1;
+  padding: 10px 80px;
+  border-radius: 25px;
+}
+
+.add-distance-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+.distance-input-container {
+  padding: 20px;
+}
+
+.distance-input {
+  font-size: 1rem;
+  border-radius: 25px;
+  text-align: center;
+  padding: 5px;
+}
+
+.add-distance-text {
+  font-size: 1.2rem;
+}

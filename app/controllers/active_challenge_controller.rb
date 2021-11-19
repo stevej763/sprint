@@ -12,6 +12,7 @@ class ActiveChallengeController < ApplicationController
   end
   
   def add_distance
+    @challenge = find_linked_challenge
     @active_challenge_id = active_challenge_id
   end 
   
