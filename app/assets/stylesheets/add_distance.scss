@@ -4,10 +4,11 @@
 }
 
 .add-distance-details {
-  width: 60%;
+  width: 400px;
   margin: 40px auto;
   background-color: #f1f1f1;
   padding: 10px 80px;
+  padding-bottom: 80px;
   border-radius: 25px;
 }
 
@@ -32,4 +33,23 @@
 
 .add-distance-text {
   font-size: 1.2rem;
+}
+
+.update-distance-button {
+  background-color: #e75462;
+  padding: 10px 50px;
+  border-radius: 40px;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #f1f1f1;
+  font-weight: bold;
+  margin: 20px;
+}
+
+.update-distance-button:hover {
+  background-color: #f1f1f1;
+  color: #e75462;
+  transition: ease-in 0.3s;
+  box-shadow: 0 5px 5px rgba(168, 69, 81, 0.2);
+  cursor: pointer;
 }

@@ -8,14 +8,15 @@
       </div>
       <h2 class="challenge-title"><%= @challenge.title%></h2> 
     </div>
+    <p class="add-distance-text">How far did you go?</p>
     <%= form_tag  '/update-distance', class: "add-distance-form" do |form| %>
       <div class="distance-input-container">
         <%= label_tag :distance, "Distance:", class:"add-distance-text"%>
-        <%= number_field_tag :distance, params[:distance], :required => true, step: :any, class: "distance-input" %>
+        <%= number_field_tag :distance, params[:distance], :required => true, step: :any, class: "distance-input", placeholder:"0.00" %>
         <span class="add-distance-text">miles</span>
       </div>
       <%= hidden_field_tag :active_challenge_id, params[:active_challenge_id], value: @active_challenge_id %>
-      <%= submit_tag "Add distance", class:"add-distance-button"%>
+      <%= submit_tag "Add distance", class:"update-distance-button"%>
     <% end %>
   </div>
 </div>
