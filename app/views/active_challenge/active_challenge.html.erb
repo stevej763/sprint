@@ -7,9 +7,20 @@
       <%end%>
       <h2 class="challenge-title"><%= @challenge.title%></h2> 
     </div>
-    <p>Total distance: <%= @challenge.distance%> miles</p>
-    <p>Current distance: <%= @active_challenge.current_distance%> miles</p>
-    <p>Remaining distance: <%= @remaining_distance %> miles</p>
+    <div class="active-challenge-rows">
+      <div class="active-challenge-row">
+        <p>Total distance: </p> 
+        <p><%= @challenge.distance%> miles</p>
+      </div>
+      <div class="active-challenge-row">
+        <p>Current distance: </p> 
+        <p><%= @active_challenge.current_distance%> miles</p>
+      </div>
+      <div class="active-challenge-row">
+        <p>Remaining distance: </p>
+        <p><%= @remaining_distance %> miles</p>
+      </div>
+    </div>
     <div class="add-distance-container">
       <%= form_tag  '/add-distance' do |form| %>
         <%= hidden_field_tag :active_challenge_id, params[:active_challenge_id], value: @active_challenge.id %>

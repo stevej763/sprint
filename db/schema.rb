@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_18_162845) do
+ActiveRecord::Schema.define(version: 2021_11_18_153949) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2021_11_18_162845) do
   create_table "active_challenges", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.decimal "current_distance", precision: 10, scale: 2, default: 0
+    t.decimal "current_distance", precision: 10, scale: 2, default: "0.0"
     t.bigint "challenge_id"
     t.bigint "user_id"
     t.index ["challenge_id"], name: "index_active_challenges_on_challenge_id"

@@ -27,3 +27,21 @@
     text-align: center;
     margin: 20px;
   }
+
+  .active-challenge-rows {
+ 
+    width: 40%;
+    margin: auto;
+
+  }
+
+  .active-challenge-row {
+
+    display: flex;
+    justify-content: space-between;
+    border: thin solid #3c32417c;
+    border-radius: 20px;
+    margin: 20px;
+    padding: 5px 10px;
+  }
+
