@@ -16,6 +16,7 @@ class ActiveChallengeController < ApplicationController
   end 
   
   def update_distance
+    update_challenge_distance(params.require(:distance), params.require(:active_challenge_id))
     redirect_to active_challenge_url
   end   
 
@@ -37,4 +38,9 @@ class ActiveChallengeController < ApplicationController
     params.require(:id)
   end
 
+  def update_challenge_distance(distance, active_challenge_id)
+    challenge = ActiveChallenge.find_by(id: active_challenge_id)
+    new_distance = challenge.current_distance + distance.to_f
+    challenge.update(current_distance: new_distance)
+  end
 end

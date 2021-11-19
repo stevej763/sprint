@@ -1,6 +1,6 @@
  <div class="add-distance-container">
   <%= form_tag  '/update-distance' do |form| %>
-    <%= text_field_tag :distance, params[:distance], :required => true,  class: "distance-input" %>
+    <%= number_field_tag :distance, params[:distance], :required => true, step: :any, class: "distance-input" %>
     <%= hidden_field_tag :active_challenge_id, params[:active_challenge_id], value: @active_challenge_id %>
     <%= submit_tag "Add distance", class:"add-distance-button"%>
   <% end %>
