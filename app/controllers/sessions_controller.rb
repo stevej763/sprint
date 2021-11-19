@@ -24,6 +24,9 @@ class SessionsController < ApplicationController
   end
 
   def homepage
+    if !current_user.active_challenge.nil?
+      redirect_to "/active-challenge"
+    end
     @challenges = Challenge.all
   end
 

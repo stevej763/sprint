@@ -1,0 +1,33 @@
+<main class="challenge-container">
+  <h1 class="active-challenge-page-title">Active Challenge</h1>
+  <div class="active-challenge-details">
+    <div class="active-challenge-heading">
+      <div>
+      <% if @challenge.icon.attached?%>
+        <%= image_tag(@challenge.icon, class: "challenge-icon")%>
+      <%end%>
+      </div>
+      <h2 class="challenge-title"><%= @challenge.title%></h2> 
+    </div>
+    <div class="active-challenge-rows">
+      <div class="active-challenge-row">
+        <p>Total distance: </p> 
+        <p id="total-distance"><%= @challenge.distance%> miles</p>
+      </div>
+      <div class="active-challenge-row">
+        <p>Current distance: </p> 
+        <p id="current-distance"><%= @active_challenge.current_distance%> miles</p>
+      </div>
+      <div class="active-challenge-row">
+        <p>Remaining distance: </p>
+        <p id="remaining-distance"><%= @remaining_distance %> miles</p>
+      </div>
+    </div>
+    <div class="add-distance-container">
+      <%= form_tag  '/add-distance' do |form| %>
+        <%= hidden_field_tag :active_challenge_id, params[:active_challenge_id], value: @active_challenge.id %>
+        <%= submit_tag "Add distance", class:"add-distance-button"%>
+      <% end %>
+    </div>
+  </div>
+</main>
