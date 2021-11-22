@@ -1,5 +1,5 @@
 require 'rails_helper'
-RSpec.feature "Adding distance", :type => :feature do
+RSpec.feature "Completes challenge when adding an activity", :type => :feature do
   fixtures :users, :challenge, :active_challenge
   context "User inputs distance" do
     scenario "from add distance page" do
