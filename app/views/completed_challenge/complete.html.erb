@@ -4,10 +4,18 @@
     <div class="completed-challenge-heading">
     <div>
       <% if @challenge.badge.attached?%>
+        <%= image_tag(@challenge.icon, class: "challenge-icon")%>
+      <%end%>
+    </div>
+      <h2 class="challenge-title"><%= @challenge.title%></h2>
+    </div>
+    <div class="completed-challenge-heading">
+    <div>
+      <% if @challenge.badge.attached?%>
         <%= image_tag(@challenge.badge, class: "challenge-icon")%>
       <%end%>
     </div>
-      <h2 class="challenge-title"><%= @challenge.title%></h2> 
+      <h2 class="challenge-title">Badge earned</h2>
     </div>
     <div class="view-badges-container">
       <%= button_to "View your badges", '/homepage', method: :get, class: "view-badges-button" %>
