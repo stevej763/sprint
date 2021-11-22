@@ -15,8 +15,8 @@ Rails.application.routes.draw do
   get 'active-challenge', to: 'active_challenge#active_challenge'
   post 'join-challenge', to: 'active_challenge#create'
   
-  get 'add-distance/:id', to: 'active_challenge#add_distance'
-  post 'update-distance', to: 'active_challenge#update_distance'
+  get 'add-activity/:id', to: 'active_challenge#add_activity'
+  post 'add-activity', to: 'active_challenge#update_challenge'
 
   get 'completed-challenge/:id', to: 'completed_challenge#complete'
 
