@@ -11,11 +11,12 @@
     <p class="add-distance-text">How far did you go?</p>
 
 
-    <%= form_for @activity, url: "/add-activity", class: "sign-up-form" do |f|%>
+    <%= form_for @activity, url: "/add-activity", class: "add-distance-form" do |f|%>
       <%= f.label :name%>
-      <%= f.text_field :name, :required => true, class:"sign-up-input" %>
+      <%= f.text_field :name, :required => true, class:"distance-input"  %>
       <%= f.label :distance%>
-      <%= f.number_field :distance, :required => true, class:"sign-up-input" %>
+      <%= f.number_field :distance, :required => true,  placeholder:"0.00", step: :any, min: "0.00", class:"distance-input" %>
+      <span class="add-distance-text">miles</span>
       <%= f.hidden_field :active_challenge_id, value: @active_challenge_id %>
       <%= f.hidden_field :user_id, value: current_user.id %>
       <%= f.submit 'Add activity', class:"sign-up-button sign-up-page-button" %>
