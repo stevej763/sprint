@@ -8,8 +8,7 @@
   border-radius: 20px;
   width: 300px;
   height: 70%;
-  margin: auto;
-  margin-top: 20px;
+  margin: -50px auto;
 }
 .landing-page-buttons {
   padding: 60px 25px;
@@ -24,6 +23,19 @@
   border-radius: 25px;
   margin: auto;
   padding: 5px 30px;
+}
+
+.header {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  text-align: center;
+  color: #F1F1F1;
+  background-image: url("header-image.jpeg");
+}
+
+.header-text {
+  background-color: #00485E;
+  width: 100%;
 }
 
 .sign-in-button,
@@ -45,4 +57,16 @@
   transition: ease-in 0.3s;
   box-shadow: 0 5px 5px rgba(168, 69, 81, 0.2);
   cursor: pointer;
+}
+
+.landing-footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #00485E;
+  color: #F1F1F1;
+  text-align: center;
 }
