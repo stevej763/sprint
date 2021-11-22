@@ -102,9 +102,31 @@ GEM
     docile (1.4.0)
     erubi (1.10.0)
     execjs (2.8.1)
+    faraday (1.8.0)
+      faraday-em_http (~> 1.0)
+      faraday-em_synchrony (~> 1.0)
+      faraday-excon (~> 1.1)
+      faraday-httpclient (~> 1.0.1)
+      faraday-net_http (~> 1.0)
+      faraday-net_http_persistent (~> 1.1)
+      faraday-patron (~> 1.0)
+      faraday-rack (~> 1.0)
+      multipart-post (>= 1.2, < 3)
+      ruby2_keywords (>= 0.0.4)
+    faraday-em_http (1.0.0)
+    faraday-em_synchrony (1.0.0)
+    faraday-excon (1.1.0)
+    faraday-httpclient (1.0.1)
+    faraday-net_http (1.0.1)
+    faraday-net_http_persistent (1.2.0)
+    faraday-patron (1.0.0)
+    faraday-rack (1.0.0)
+    faraday_middleware (1.2.0)
+      faraday (~> 1.0)
     ffi (1.15.4)
     globalid (0.5.2)
       activesupport (>= 5.0)
+    hashie (5.0.0)
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
     jbuilder (2.11.3)
@@ -124,6 +146,7 @@ GEM
     mini_mime (1.1.2)
     minitest (5.14.4)
     msgpack (1.4.2)
+    multipart-post (2.1.1)
     nio4r (2.5.8)
     nokogiri (1.12.5-arm64-darwin)
       racc (~> 1.4)
@@ -208,6 +231,7 @@ GEM
     rubocop-ast (1.13.0)
       parser (>= 3.0.1.1)
     ruby-progressbar (1.11.0)
+    ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
@@ -242,6 +266,11 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
+    strava-ruby-client (0.4.2)
+      activesupport
+      faraday (>= 1.0.0)
+      faraday_middleware
+      hashie
     terminal-table (3.0.2)
       unicode-display_width (>= 1.1.1, < 3)
     thor (1.1.0)
@@ -299,6 +328,7 @@ DEPENDENCIES
   simplecov
   simplecov-console
   spring
+  strava-ruby-client
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)

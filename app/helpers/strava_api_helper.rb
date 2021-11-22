@@ -1,0 +1,2 @@
+module StravaApiHelper
+end

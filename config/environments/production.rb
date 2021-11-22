@@ -1,6 +1,11 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
+
+  ENV['STRAVA_CLIENT_ID'] = '74599'
+  ENV['STRAVA_CLIENT_SECRET'] = '656db5757fec731df7caf01b8eda437d285d94ff'
+  ENV['STRAVA_REDIRECT_URL'] = 'https://sprint-app-2021.herokuapp.com/strava-oauth'
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.

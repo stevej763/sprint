@@ -1,6 +1,11 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
+
+  ENV['STRAVA_CLIENT_ID'] = '74599'
+  ENV['STRAVA_CLIENT_SECRET'] = '656db5757fec731df7caf01b8eda437d285d94ff'
+  ENV['STRAVA_REDIRECT_URL'] = 'http://localhost:3000/strava-oauth'
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded any time
