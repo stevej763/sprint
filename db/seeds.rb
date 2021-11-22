@@ -13,6 +13,8 @@ marathon_description = "In a nod to Greek history, the first marathon commemorat
 fuji_description = "Japan’s Mt. Fuji is an active volcano about 100 kilometers southwest of Tokyo. Commonly called “Fuji-san,” it’s the country’s tallest peak, at 3,776 meters. Are you up to the challenge?"
 space_station_description = "Run to the space station"
 
+hp_check_points
+
 add_db_to_challenge('Hunt the Horcruxes', hp_description, "Easy", 7, 'template_images/harry_potter/badge.png', 'template_images/harry_potter/icon.png')
 add_db_to_challenge('Marathon to Athens', marathon_description, "Medium", 26, 'template_images/marathon/badge.png', 'template_images/marathon/icon.png')
 add_db_to_challenge('Mount Fuji', fuji_description, "Hard", 46, 'template_images/fuji/badge.png', 'template_images/fuji/icon.jpeg')

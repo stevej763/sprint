@@ -84,3 +84,17 @@
   padding-left: 10px;
   padding-right: 10px;
 }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-row-gap: 15px;
+  grid-column-gap: 15px;
+  text-align: center;
+}
+
+.grid-item {
+  background-color: #DBDADB;
+  border-radius: 25px;
+  padding: 10px 50px;
+}
