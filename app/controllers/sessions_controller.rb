@@ -31,4 +31,7 @@ class SessionsController < ApplicationController
     @challenges = Challenge.all
   end
 
+  def profile_page
+  end 
+
 end
