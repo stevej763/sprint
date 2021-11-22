@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_22_140809) do
+ActiveRecord::Schema.define(version: 2021_11_22_171704) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2021_11_22_140809) do
     t.decimal "current_distance", precision: 10, scale: 2, default: "0.0"
     t.bigint "challenge_id"
     t.bigint "user_id"
+    t.datetime "last_sync"
     t.index ["challenge_id"], name: "index_active_challenges_on_challenge_id"
     t.index ["user_id"], name: "index_active_challenges_on_user_id"
   end
