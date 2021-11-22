@@ -31,6 +31,9 @@ gem "aws-sdk-s3"
 # strava client
 gem 'strava-ruby-client'
 
+# dotenv for api keys
+gem 'dotenv-rails'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
