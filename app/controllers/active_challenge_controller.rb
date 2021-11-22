@@ -49,12 +49,18 @@ class ActiveChallengeController < ApplicationController
     active_challenge = ActiveChallenge.find_by(id: active_challenge_id)
     new_distance = active_challenge.current_distance + distance.to_f
     if new_distance >= parent_challenge.distance
+      completed_challenge = CompletedChallenge.create(challenge_id: current_challenge.id, user_id: current_challenge.user_id)
+      update_activities(current_challenge.id, completed_challenge.id)
       current_challenge.destroy
       redirect_to "/completed-challenge/#{parent_challenge.id}"
     else   
       active_challenge.update(current_distance: new_distance)
       redirect_to active_challenge_url
     end   
+  end
+
+  def update_activities(current_challenge_id, completed_challenge_id)
+    Activity.where(active_challenge_id: current_challenge_id).each {|activity| activity.update(completed_challenge_id: completed_challenge_id)}
   end
 
 end
