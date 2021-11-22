@@ -8,8 +8,7 @@
   border-radius: 20px;
   width: 300px;
   height: 70%;
-  margin: auto;
-  margin-top: 20px;
+  margin: -50px auto;
 }
 .landing-page-buttons {
   padding: 60px 25px;
@@ -65,6 +64,8 @@
   left: 0;
   bottom: 0;
   width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
   background-color: #00485E;
   color: #F1F1F1;
   text-align: center;
