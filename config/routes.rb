@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get 'add-distance/:id', to: 'active_challenge#add_distance'
   post 'update-distance', to: 'active_challenge#update_distance'
 
-
+  get 'strava', to: 'strava_api#link_with_strava'
+  get 'strava-oauth', to: 'strava_api#oauth'
   root to: "landing_page#landing_page"
 end
