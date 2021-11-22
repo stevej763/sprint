@@ -2,7 +2,7 @@ class ActiveChallengeController < ApplicationController
   
   def active_challenge
     @active_challenge = current_challenge
-    @challenge = find_linked_challenge
+    @challenge = linked_challenge
     @remaining_distance = remaining_distance
   end
 
@@ -12,7 +12,7 @@ class ActiveChallengeController < ApplicationController
   end
 
   def add_activity
-    @challenge = find_linked_challenge
+    @challenge = linked_challenge
     @active_challenge_id = active_challenge_id
     @activity = Activity.new
   end
@@ -32,7 +32,7 @@ class ActiveChallengeController < ApplicationController
     current_user.active_challenge
   end
 
-  def find_linked_challenge
+  def linked_challenge
     Challenge.find_by(id: current_user.active_challenge.challenge_id)
   end
 
@@ -45,14 +45,13 @@ class ActiveChallengeController < ApplicationController
   end
 
   def update_challenge_distance(distance, active_challenge_id)
-    parent_challenge = find_linked_challenge
     active_challenge = ActiveChallenge.find_by(id: active_challenge_id)
     new_distance = active_challenge.current_distance + distance.to_f
-    if new_distance >= parent_challenge.distance
-      completed_challenge = CompletedChallenge.create(challenge_id: current_challenge.id, user_id: current_challenge.user_id)
+    if new_distance >= linked_challenge.distance
+      completed_challenge = CompletedChallenge.create(challenge_id: current_challenge.challenge_id, user_id: current_challenge.user_id)
       update_activities(current_challenge.id, completed_challenge.id)
       current_challenge.destroy
-      redirect_to "/completed-challenge/#{parent_challenge.id}"
+      redirect_to "/completed-challenge/#{linked_challenge.id}"
     else   
       active_challenge.update(current_distance: new_distance)
       redirect_to active_challenge_url
