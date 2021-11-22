@@ -11,7 +11,6 @@ RSpec.feature "Adding distance", :type => :feature do
       expect(page).to have_content 'You have completed:'
       expect(page).to have_content 'Test challenge'
       expect(page).to have_button 'View your badges'
-
     end
   end
 end
