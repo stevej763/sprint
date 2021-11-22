@@ -32,6 +32,12 @@
   align-items: center;
   padding-right: 30px;
 }
+.navbar-profile a {
+  display: flex;
+  align-items: center;
+  padding-right: 30px;
+  text-decoration: none;
+}
 
 .profile_image {
   border-style: solid;
