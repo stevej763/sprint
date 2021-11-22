@@ -10,18 +10,23 @@ class ActiveChallengeController < ApplicationController
     active_challenge = ActiveChallenge.create(challenge_id: params.require(:challenge_id), user_id: current_user.id)
     redirect_to active_challenge_url
   end
-  
-  def add_distance
+
+  def add_activity
     @challenge = find_linked_challenge
     @active_challenge_id = active_challenge_id
-  end 
+    @activity = Activity.new
+  end
   
-  def update_distance
-    update_challenge_distance(params.require(:distance), params.require(:active_challenge_id))
-    
+  def update_challenge
+    Activity.create(activity_params)
+    update_challenge_distance(params.require(:activity).permit(:distance)[:distance], params.require(:activity).permit(:active_challenge_id)[:active_challenge_id])
   end   
 
   private 
+
+  def activity_params
+    params.require(:activity).permit(:name, :distance, :active_challenge_id, :user_id)
+  end
 
   def current_challenge
     current_user.active_challenge
@@ -40,7 +45,7 @@ class ActiveChallengeController < ApplicationController
   end
 
   def update_challenge_distance(distance, active_challenge_id)
-    parent_challenge =  find_linked_challenge
+    parent_challenge = find_linked_challenge
     active_challenge = ActiveChallenge.find_by(id: active_challenge_id)
     new_distance = active_challenge.current_distance + distance.to_f
     if new_distance >= parent_challenge.distance

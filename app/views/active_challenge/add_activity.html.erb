@@ -9,6 +9,21 @@
       <h2 class="challenge-title"><%= @challenge.title%></h2> 
     </div>
     <p class="add-distance-text">How far did you go?</p>
+
+
+    <%= form_for @activity, url: "/add-activity", class: "sign-up-form" do |f|%>
+      <%= f.label :name%>
+      <%= f.text_field :name, :required => true, class:"sign-up-input" %>
+      <%= f.label :distance%>
+      <%= f.number_field :distance, :required => true, class:"sign-up-input" %>
+      <%= f.hidden_field :active_challenge_id, value: @active_challenge_id %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.submit 'Add activity', class:"sign-up-button sign-up-page-button" %>
+    <%end%>
+
+
+
+
     <%= form_tag  '/update-distance', class: "add-distance-form" do |form| %>
       <div class="distance-input-container">
         <%= label_tag :distance, "Distance:", class:"add-distance-text"%>
