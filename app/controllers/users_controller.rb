@@ -13,7 +13,7 @@ class UsersController < ApplicationController
       redirect_to homepage_url
       flash[:message] = "You have signed up."
     else 
-      redirect_to root_url
+      redirect_to sign_up_url
       flash[:message] = "Username already in use. Please try again."
     end   
   end

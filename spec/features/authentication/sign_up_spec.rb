@@ -46,7 +46,7 @@ RSpec.feature "User sign up", :type => :feature do
     fill_in "user_username", with: "test"
     fill_in "user_password", with: "password1"
     click_button "Sign up"
-    expect(page).to have_current_path("/")
+    expect(page).to have_current_path("/sign-up")
     expect(page).to have_content("Username already in use. Please try again.")
   end
 end
