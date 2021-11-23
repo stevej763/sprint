@@ -6,3 +6,4 @@ class AddFieldsToActivity < ActiveRecord::Migration[6.1]
     add_belongs_to :activities, :completed_challenge
   end
 end
+

@@ -1,4 +1,13 @@
 <%= render partial: 'partials/flashes'%>
+    <div class="challenge-check-points">
+      <div class="checkpoint-container">
+        <% @challenge.checkpoints.each do |checkpoint| %>
+          <div class="checkpoint-item">
+            <p class="checkpoint-text"><%= checkpoint %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
 <main class="challenge-container">
   <h1 class="active-challenge-page-title">Active Challenge</h1>
   <div class="active-challenge-details">
@@ -10,6 +19,7 @@
       </div>
       <h2 class="challenge-title"><%= @challenge.title%></h2> 
     </div>
+
     <div class="active-challenge-rows">
       <div class="active-challenge-row">
         <p>Total distance: </p> 
@@ -30,7 +40,7 @@
         <%= button_to "Sync Strava", "/strava/sync_activties/#{@active_challenge.id}", method: :get, class: "add-distance-button" %>
       <%end%>
     </div>
-    <% if !@activities.nil? %>
+    <% if !@activities.empty? %>
       <div class="activities-container" id="activities">
         <h2 class="activities-heading">Activities</h2>
         <% @activities.each do |activity| %>
