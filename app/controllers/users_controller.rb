@@ -9,7 +9,8 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_details)
-    if  session[:user_id] = @user.id
+    session[:user_id] = @user.id
+    if @user.id != nil
       redirect_to homepage_url
       flash[:message] = "You have signed up."
     else 
