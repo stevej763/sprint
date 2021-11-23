@@ -40,7 +40,8 @@ class StravaApiController < ApplicationController
         )
     end
     total_distance = 0
-    new_strava_activities.each do |strava_activity|
+    activities = new_strava_activities
+    activities.each do |strava_activity|
       distance_in_miles = strava_activity.distance / 1600
       total_distance += distance_in_miles
       new_activity = Activity.create(
@@ -53,12 +54,25 @@ class StravaApiController < ApplicationController
     end
     user_active_challenge.update(last_sync: Time.now)
     update_challenge_distance(total_distance)
+    flash_update(activities)
+    
   end
 
   private
 
+  def flash_update(activities)
+    if activities.count == 0
+      flash[:message] = "Sync complete - No new activities found."
+    elsif activities.count == 1
+      flash[:message] = "Sync complete - 1 activity added"
+    else 
+      flash[:message] = "Sync complete - #{activities.count} activities added"
+    end
+  end
+
   def save_map(strava_activity, new_activity)
     if strava_activity.map.summary_polyline != nil
+
       image = URI.open(build_map_image(strava_activity.map))
       new_activity.activity_map.attach(io: image, filename: strava_activity.name)
     end
@@ -70,7 +84,6 @@ class StravaApiController < ApplicationController
     end_latlng = decoded_summary_polyline[-1]
 
     google_maps_api_key = ENV['GOOGLE_STATIC_MAPS_API_KEY']
-
     base_url = "https://maps.googleapis.com/maps/api/staticmap?maptype=roadmap&size=600x400"
     markers = "color:0x72EF36|label:S|#{start_latlng[0]},#{start_latlng[1]}&markers=color:0xE75462|label:F|#{end_latlng[0]},#{end_latlng[1]}"
     google_image_url = "#{base_url}&key=#{google_maps_api_key}&path=enc:#{map.summary_polyline}&markers=#{markers}"

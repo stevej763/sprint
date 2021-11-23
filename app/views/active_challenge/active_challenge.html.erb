@@ -1,3 +1,4 @@
+<%= render partial: 'partials/flashes'%>
 <main class="challenge-container">
   <h1 class="active-challenge-page-title">Active Challenge</h1>
   <div class="active-challenge-details">
@@ -31,13 +32,21 @@
     </div>
       <div id="activities">
       <% @activities.each do |activity| %>
-      <hr class="challenge-ruler">
-        <p><%= activity.name %><p>
-        <p><%= activity.distance %> miles<p>
-        <p><%= activity.created_at.strftime("%H:%M - %d %b %Y") %></p>
-        <% if activity.activity_map.attached?%>
-          <%= image_tag(activity.activity_map, class: "activity-map")%>
-        <%end%>
+      <hr class="activity-ruler">
+        <div class="activity-details-container">
+          <div class="activity-details">
+            <div>
+              <h3 class="activity-title"><%= activity.name %></h3>
+              <p class="activity-distance">Distance: <%= activity.distance %> miles</p>
+              <p class="activity-time">Logged: <%= activity.created_at.strftime("%H:%M - %d %b %Y") %></p>
+            </div>
+            <div class="activity-map-container">
+            <% if activity.activity_map.attached?%>
+              <%= image_tag(activity.activity_map, class: "activity-map")%>
+            <%end%>
+            </div>
+          </div>
+        </div>
       <%end%>
     </div>
   </div>
