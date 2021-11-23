@@ -1,5 +1,3 @@
-require 'open-uri'
-
 class StravaApiController < ApplicationController
   include ActivityUpdate
 
