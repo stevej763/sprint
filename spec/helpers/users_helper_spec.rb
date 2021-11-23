@@ -13,3 +13,17 @@ def sign_in_user_with_active_challenge
   fill_in "password", with: "password2"
   click_button "Sign in"
 end
+
+def sign_up_user
+  visit "/"
+  click_button "Sign up"
+
+  expect(page).to have_current_path("/sign-up")
+  fill_in "user_username", with: "test"
+  fill_in "user_password", with: "password"
+  click_button "Sign up"
+
+  expect(page).to have_current_path("/homepage")
+  expect(find_by_id("current_user").text).to eq("test")
+  expect(page).to have_content("You have signed up.")
+end

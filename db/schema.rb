@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_22_102227) do
+ActiveRecord::Schema.define(version: 2021_11_22_171704) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2021_11_22_102227) do
     t.decimal "current_distance", precision: 10, scale: 2, default: "0.0"
     t.bigint "challenge_id"
     t.bigint "user_id"
+    t.datetime "last_sync"
     t.index ["challenge_id"], name: "index_active_challenges_on_challenge_id"
     t.index ["user_id"], name: "index_active_challenges_on_user_id"
   end
@@ -53,6 +54,19 @@ ActiveRecord::Schema.define(version: 2021_11_22_102227) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "activities", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.decimal "distance", precision: 10, scale: 2, default: "0.0"
+    t.bigint "user_id"
+    t.bigint "active_challenge_id"
+    t.bigint "completed_challenge_id"
+    t.index ["active_challenge_id"], name: "index_activities_on_active_challenge_id"
+    t.index ["completed_challenge_id"], name: "index_activities_on_completed_challenge_id"
+    t.index ["user_id"], name: "index_activities_on_user_id"
+  end
+
   create_table "challenges", force: :cascade do |t|
     t.string "title"
     t.string "description"
@@ -60,6 +74,15 @@ ActiveRecord::Schema.define(version: 2021_11_22_102227) do
     t.integer "distance"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "completed_challenges", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "challenge_id"
+    t.bigint "user_id"
+    t.index ["challenge_id"], name: "index_completed_challenges_on_challenge_id"
+    t.index ["user_id"], name: "index_completed_challenges_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

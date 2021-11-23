@@ -1,0 +1,29 @@
+ <div class="add-distance-container">
+  <div class="add-distance-details">
+    <div class="active-challenge-heading">
+      <div>
+      <% if @challenge.icon.attached?%>
+        <%= image_tag(@challenge.icon, class: "challenge-icon")%>
+      <%end%>
+      </div>
+      <h2 class="challenge-title"><%= @challenge.title%></h2> 
+    </div>
+    <p class="add-distance-text">How far did you go?</p>
+
+
+    <%= form_for @activity, url: "/add-activity", class: "add-distance-form" do |f|%>
+      <div class="distance-input-container">
+        <%= f.label :name, "Activity name:", class:"add-distance-text" %>
+      </div>
+        <%= f.text_field :name, :required => true, class:"distance-input"  %>
+      <div class="distance-input-container">
+        <%= f.label :distance, "Distance (miles):", class:"add-distance-text"%>
+      </div>
+        <%= f.number_field :distance, :required => true,  placeholder:"0.00", step: :any, min: "0.00", class:"distance-input" %>
+        <%= f.hidden_field :active_challenge_id, value: @active_challenge_id %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+
+      <%= f.submit 'Add activity', class:"update-distance-button" %>
+    <%end%>
+  </div>
+</div>

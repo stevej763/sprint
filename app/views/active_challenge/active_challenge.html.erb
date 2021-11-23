@@ -24,7 +24,10 @@
       </div>
     </div>
     <div class="add-distance-container">
-      <%= button_to "Add distance", "/add-distance/#{@active_challenge.id}", method: :get, class: "add-distance-button" %>
+      <%= button_to "Add activity", "/add-activity/#{@active_challenge.id}", method: :get, class: "add-distance-button" %>
+      <%if !current_user.strava_athlete_id.nil?%>
+        <%= button_to "Sync Strava", "/strava/sync_activties/#{@active_challenge.id}", method: :get, class: "add-distance-button" %>
+      <%end%>
     </div>
   </div>
 </main>

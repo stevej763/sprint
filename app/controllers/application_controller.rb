@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   helper_method :logged_in?
   helper_method :redirect_logged_in_users
+  helper_method :user_active_challenge
+  helper_method :active_challenge_parent_challenge
 
   def current_user    
     User.find_by(id: session[:user_id])
@@ -21,5 +23,12 @@ class ApplicationController < ActionController::Base
     redirect_to homepage_url unless !logged_in? 
   end
 
+  def user_active_challenge
+    current_user.active_challenge
+  end
+
+  def active_challenge_parent_challenge
+    Challenge.find_by(id: user_active_challenge.challenge_id)
+  end
 
 end
