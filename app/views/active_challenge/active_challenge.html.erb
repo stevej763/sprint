@@ -1,15 +1,14 @@
 <%= render partial: 'partials/flashes'%>
-    <div class="challenge-check-points">
-      <div class="checkpoint-container">
-        <% @challenge.checkpoints.each do |checkpoint| %>
-          <div class="checkpoint-item">
-            <p class="checkpoint-text"><%= checkpoint %></p>
-          </div>
-        <% end %>
-      </div>
-    </div>
 <main class="challenge-container">
   <h1 class="active-challenge-page-title">Active Challenge</h1>
+  <h2 class="checkpoint-title">Checkpoints</h2>
+  <div class="checkpoint-container">
+    <% @challenge.checkpoints.each_with_index do |checkpoint, index| %>
+      <div class="checkpoint-item <%=@challenge.complete?(@current_distance, index)%>">
+        <p><%= checkpoint %></p>
+      </div>
+    <% end %>
+  </div>
   <div class="active-challenge-details">
     <div class="active-challenge-heading">
       <div>
