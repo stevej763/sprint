@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'sign-out', to: 'sessions#sign_out'
 
   get 'homepage', to: 'sessions#homepage'
-  get 'profile', to: 'sessions#profile_page'
+  get 'profile', to: 'sessions#profile'
 
   get 'challenge/:id', to: 'challenge#challenge'
 
