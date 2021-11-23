@@ -38,6 +38,7 @@ gem 'dotenv-rails'
 gem 'polylines'
 
 # url image downloader
+gem 'uri'
 gem 'open-uri'
 
 # Reduces boot times through caching; required in config/boot.rb
