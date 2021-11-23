@@ -29,5 +29,16 @@
         <%= button_to "Sync Strava", "/strava/sync_activties/#{@active_challenge.id}", method: :get, class: "add-distance-button" %>
       <%end%>
     </div>
+      <div id="activities">
+      <% @activities.each do |activity| %>
+      <hr class="challenge-ruler">
+        <p><%= activity.name %><p>
+        <p><%= activity.distance %> miles<p>
+        <p><%= activity.created_at.strftime("%H:%M - %d %b %Y") %></p>
+        <% if activity.activity_map.attached?%>
+          <%= image_tag(activity.activity_map, class: "activity-map")%>
+        <%end%>
+      <%end%>
+    </div>
   </div>
 </main>

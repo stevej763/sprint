@@ -34,6 +34,12 @@ gem 'strava-ruby-client'
 # dotenv for api keys
 gem 'dotenv-rails'
 
+# polyline gem for map drawing
+gem 'polylines'
+
+# url image downloader
+gem 'open-uri'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 

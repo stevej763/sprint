@@ -1,3 +1,5 @@
+require 'open-uri'
+
 class StravaApiController < ApplicationController
   include ActivityUpdate
 
@@ -27,7 +29,7 @@ class StravaApiController < ApplicationController
 
   def sync_strava_activties
     if current_user.strava_expires_at >= Time.now
-      response = strava_user_client.oauth_token(
+      response = strava_oauth_client.oauth_token(
         refresh_token: current_user.refresh_token,
         grant_type: 'refresh_token'
       )
@@ -41,18 +43,39 @@ class StravaApiController < ApplicationController
     new_strava_activities.each do |strava_activity|
       distance_in_miles = strava_activity.distance / 1600
       total_distance += distance_in_miles
-      Activity.create(
+      new_activity = Activity.create(
         name: strava_activity.name, 
         distance: distance_in_miles, 
         user_id: current_user.id, 
         active_challenge_id: user_active_challenge.id
       )
+      save_map(strava_activity, new_activity)
     end
     user_active_challenge.update(last_sync: Time.now)
     update_challenge_distance(total_distance)
   end
 
-  private 
+  private
+
+  def save_map(strava_activity, new_activity)
+    if strava_activity.map.summary_polyline != nil
+      image = URI.open(build_map_image(strava_activity.map))
+      new_activity.activity_map.attach(io: image, filename: strava_activity.name)
+    end
+  end
+
+  def build_map_image(map)
+    decoded_summary_polyline = Polylines::Decoder.decode_polyline(map.summary_polyline)
+    start_latlng = decoded_summary_polyline[0]
+    end_latlng = decoded_summary_polyline[-1]
+
+    google_maps_api_key = ENV['GOOGLE_STATIC_MAPS_API_KEY']
+
+    base_url = "https://maps.googleapis.com/maps/api/staticmap?maptype=roadmap&size=600x400"
+    markers = "color:0x72EF36|label:S|#{start_latlng[0]},#{start_latlng[1]}&markers=color:0xE75462|label:F|#{end_latlng[0]},#{end_latlng[1]}"
+    google_image_url = "#{base_url}&key=#{google_maps_api_key}&path=enc:#{map.summary_polyline}&markers=#{markers}"
+    return google_image_url
+  end
 
   def new_strava_activities
     strava_user_client.athlete_activities(after: calculateDateToSyncFrom)
