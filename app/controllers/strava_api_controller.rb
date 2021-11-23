@@ -1,4 +1,5 @@
 class StravaApiController < ApplicationController
+  include ActivityUpdate
 
   def link_with_strava
     client = strava_oauth_client
@@ -15,40 +16,50 @@ class StravaApiController < ApplicationController
   def oauth
     client = strava_oauth_client
     response = client.oauth_token(code: params.require(:code))
-    current_user.update(access_token: response.access_token, refresh_token: response.refresh_token, strava_athlete_id: response.athlete.id, strava_expires_at: response.expires_at)
+    current_user.update(
+      access_token: response.access_token, 
+      refresh_token: response.refresh_token, 
+      strava_athlete_id: response.athlete.id, 
+      strava_expires_at: response.expires_at
+    )
     redirect_to '/'
   end
 
-  def sync_activties
-    current_challenge = ActiveChallenge.find_by(id: params.require(:id))
-    parent_challenge = Challenge.find_by(id: current_challenge.challenge_id)
-    after_date = current_challenge.last_sync.nil? current_challenge.created_date
-    activities = strava_user_client.athlete_activities(after: current_challenge.last_sync)
-    current_challenge.update(last_sync: Time.now)
+  def sync_strava_activties
+    if current_user.strava_expires_at >= Time.now
+      response = strava_user_client.oauth_token(
+        refresh_token: current_user.refresh_token,
+        grant_type: 'refresh_token'
+      )
+      current_user.update(
+        refresh_token: response.refresh_token, 
+        access_token: response.access_token,
+        strava_expires_at: response.expires_at
+        )
+    end
     total_distance = 0
-    activities.each do |activity|
-      distance_in_miles = activity.distance / 1600
+    new_strava_activities.each do |strava_activity|
+      distance_in_miles = strava_activity.distance / 1600
       total_distance += distance_in_miles
-      Activity.create(name: activity.name, distance: distance_in_miles, user_id: current_user.id, active_challenge_id: params.require(:id))
+      Activity.create(
+        name: strava_activity.name, 
+        distance: distance_in_miles, 
+        user_id: current_user.id, 
+        active_challenge_id: user_active_challenge.id
+      )
     end
-
-    new_distance = current_challenge.current_distance + total_distance
-
-    if new_distance >= parent_challenge.distance
-      completed_challenge = CompletedChallenge.create(challenge_id: current_challenge.challenge_id, user_id: current_challenge.user_id)
-      update_activities(current_challenge.id, completed_challenge.id)
-      current_challenge.destroy
-      redirect_to "/completed-challenge/#{parent_challenge.id}"
-    else   
-      current_challenge.update(current_distance: new_distance)
-      redirect_to '/'
-    end
+    user_active_challenge.update(last_sync: Time.now)
+    update_challenge_distance(total_distance)
   end
 
   private 
 
-  def update_activities(current_challenge_id, completed_challenge_id)
-    Activity.where(active_challenge_id: current_challenge_id).each {|activity| activity.update(completed_challenge_id: completed_challenge_id)}
+  def new_strava_activities
+    strava_user_client.athlete_activities(after: calculateDateToSyncFrom)
+  end
+
+  def calculateDateToSyncFrom
+    user_active_challenge.last_sync.nil? ? user_active_challenge.created_at : user_active_challenge.last_sync
   end
 
   def strava_user_client
@@ -63,4 +74,5 @@ class StravaApiController < ApplicationController
       client_secret: ENV['STRAVA_CLIENT_SECRET']
     )
   end
+
 end
