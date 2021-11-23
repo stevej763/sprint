@@ -2,10 +2,11 @@
   <h1 class="header-text">You're only a few steps away from your next Sprint challenge!</h1>
 </div>
 
+  <%= render partial: 'partials/flashes'%>
+
 <div class="landing-page-container">
   <div class="auth-contianer">
     <div class="landing-page-buttons">
-      <%= render partial: 'partials/flashes' %>
       <%= button_to "Sign in", '/sign-in', method: :get, class:"sign-in-button" %>
       <%= button_to "Sign up", '/sign-up', method: :get, class:"sign-up-button"%>
     </div>
