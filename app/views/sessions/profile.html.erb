@@ -3,8 +3,8 @@
   <div class="challenges-container">
     <% @completed_challenges.each do |challenge| %>
         <div class="challenge-card">
-          <%= image_tag(challenge.badge, class: "homepage-challenge-icon")%>
-          <p><%= challenge.title %></p>
+          <%= image_tag(challenge.badge, class: "profile-page-badge")%>
+          <h3><%= challenge.title %></h3>
         </div>
     <% end%>
   </div>
