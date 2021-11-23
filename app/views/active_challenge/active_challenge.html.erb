@@ -30,7 +30,8 @@
         <%= button_to "Sync Strava", "/strava/sync_activties/#{@active_challenge.id}", method: :get, class: "add-distance-button" %>
       <%end%>
     </div>
-      <div id="activities">
+      <div class="activities-container" id="activities">
+      <h2 class="activities-heading">Activities</h2>
       <% @activities.each do |activity| %>
       <hr class="activity-ruler">
         <div class="activity-details-container">
@@ -42,7 +43,7 @@
             </div>
             <div class="activity-map-container">
             <% if activity.activity_map.attached?%>
-              <%= image_tag(activity.activity_map, class: "activity-map")%>
+              <a class="activity-map-link-wrapper" href=<%=url_for(activity.activity_map)%>><%= image_tag(activity.activity_map, class: "activity-map", title: "click to enlarge")%></a>
             <%end%>
             </div>
           </div>
