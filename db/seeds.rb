@@ -1,8 +1,7 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 
-def add_db_to_challenge(title, description, difficulty, distance, badge_file_path, icon_file_path)
-  checkpoints = ["test 1", "test 2", "test 3"]
+def add_db_to_challenge(title, description, difficulty, distance, badge_file_path, icon_file_path,checkpoints)
   result = Challenge.new(title: title, description: description, difficulty: difficulty, distance: distance, checkpoints: checkpoints)
   result.badge.attach(io: File.open(badge_file_path), filename: 'badge.png')
   result.icon.attach(io: File.open(icon_file_path), filename: 'icon.png')
@@ -10,11 +9,17 @@ def add_db_to_challenge(title, description, difficulty, distance, badge_file_pat
 end
 
 hp_description = "Dumbledore has discovered Voldemort has split his soul. Can you help Harry Potter defeat Voldemort by finding and destroying each horcrux?"
+hp_checkpoint = ["Tom Riddle's Diary","Marvolo Gaunt's Ring", "Salazar Slytherin's Locket","Helga Hufflepuff's Cup","Rowena Ravenclaw's Diadem","Harry Potter","Nagini the Snake"]
 marathon_description = "In a nod to Greek history, the first marathon commemorated the run of the soldier Pheidippides from a battlefield near the town of Marathon, Greece, to Athens in 490 B.C. According to legend, Pheidippides ran the approximately 25 miles to announce the defeat of the Persians to some anxious Athenians. Do you have what it takes?"
+marathon_checkpoint = ["Alpha","Zeus","Poseidon","Ares","Aphrodite", "Hera","Demeter","Athena","Apollo","Artemis","Hephaestus","Hermes","Dionysus","Omega"]
 fuji_description = "Japan’s Mt. Fuji is an active volcano about 100 kilometers southwest of Tokyo. Commonly called “Fuji-san,” it’s the country’s tallest peak, at 3,776 meters. Are you up to the challenge?"
+fuji_checkpoint = ["Lake Kawaguchi","Lake Motosu","Lake Sai","Lake Shōji","Lake Yamanaka","Mount Fuji summit"]
 space_station_description = "Ever wanted to be an astronaut? Here's your chance to travel to the space station!"
+space_station_checkpoint = ["Trosposphere","Stratosphere","Mesosphere","Thermosphere","Ionosphere","Exosphere"]
 
-add_db_to_challenge('Hunt the Horcruxes', hp_description, "Easy", 7.0, 'template_images/harry_potter/badge.png', 'template_images/harry_potter/icon.png')
-add_db_to_challenge('Marathon to Athens', marathon_description, "Medium", 26.0, 'template_images/marathon/badge.png', 'template_images/marathon/icon.png')
-add_db_to_challenge('Mount Fuji', fuji_description, "Hard", 46.0, 'template_images/fuji/badge.png', 'template_images/fuji/icon.jpeg')
-add_db_to_challenge('Space Station', space_station_description, "Insane!", 254.0, 'template_images/space/badge.png', 'template_images/space/icon.png')
+
+add_db_to_challenge('Hunt the Horcruxes', hp_description, "Easy", 7.0, 'template_images/harry_potter/badge.png', 'template_images/harry_potter/icon.png',hp_checkpoint)
+add_db_to_challenge('Marathon to Athens', marathon_description, "Medium", 26.0, 'template_images/marathon/badge.png', 'template_images/marathon/icon.png',marathon_checkpoint)
+add_db_to_challenge('Mount Fuji', fuji_description, "Hard", 46.0, 'template_images/fuji/badge.png', 'template_images/fuji/icon.jpeg',fuji_checkpoint)
+add_db_to_challenge('Space Station', space_station_description, "Insane!", 254.0, 'template_images/space/badge.png', 'template_images/space/icon.png',space_station_checkpoint)
+
