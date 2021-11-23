@@ -1,6 +1,5 @@
-<main>
+<main class="challenge-container">
   <h1 class="profile-page-title">Your badges</h1>
-  <div class="profile-details">
   <div class="challenges-container">
     <% @completed_challenges.each do |challenge| %>
         <div class="challenge-card">
@@ -8,7 +7,6 @@
           <p><%= challenge.title %></p>
         </div>
     <% end%>
-  </div>
   </div>
   
 </main>
