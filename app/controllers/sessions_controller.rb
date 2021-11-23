@@ -31,4 +31,11 @@ class SessionsController < ApplicationController
     @challenges = Challenge.all
   end
 
+  def profile
+    @completed_challenges = []
+    current_user.completed_challenges.each do |completed_challenge|
+      @completed_challenges << Challenge.find_by(id: completed_challenge.challenge_id)
+    end
+  end 
+
 end
