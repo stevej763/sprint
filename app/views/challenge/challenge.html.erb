@@ -23,7 +23,9 @@
       <div class="challenge-check-points">
         <h3>Check points</h3>
         <div class="grid-container">
-          <div class="grid-item">Tom Riddle's Diary</div>
+          <% @challenge.checkpoints.each do |checkpoint| %>
+            <div class="grid-item"><%= checkpoint %></div>
+          <% end %>
           <div class="grid-item">Marvolo Gaunt's Ring</div>
           <div class="grid-item">Salazar Slytherin's Locket</div>
           <div class="grid-item">Helga Hufflepuff's Cup</div>
