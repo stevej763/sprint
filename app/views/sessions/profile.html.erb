@@ -1,5 +1,14 @@
-<h1>Your badges</h1>
-
-<% @completed_challenges.each do |challenge| %>
-  <p><%= challenge.title %></p>
-<% end%>
+<main>
+  <h1 class="profile-page-title">Your badges</h1>
+  <div class="profile-details">
+  <div class="challenges-container">
+    <% @completed_challenges.each do |challenge| %>
+        <div class="challenge-card">
+          <%= image_tag(challenge.badge, class: "homepage-challenge-icon")%>
+          <p><%= challenge.title %></p>
+        </div>
+    <% end%>
+  </div>
+  </div>
+  
+</main>
