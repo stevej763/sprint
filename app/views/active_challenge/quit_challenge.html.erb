@@ -1,0 +1,12 @@
+<h1>Quit challenge</h1>
+<h2>Are you sure you want to quit this challenge? All challenge progress will be lost.</h2>
+
+<div class="challenge-heading">
+  <% if active_challenge_parent_challenge.icon.attached?%>
+    <%= image_tag(active_challenge_parent_challenge.icon, class: "challenge-icon")%>
+  <%end%>
+  <h3 class="challenge-title"><%= active_challenge_parent_challenge.title%></h3> 
+</div>
+
+<%= button_to "Yes", "/quit-challenge-confirmed", method: :delete, class: "add-distance-button" %>
+<%= button_to "No", "/", method: :get, class: "add-distance-button" %>

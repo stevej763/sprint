@@ -1,8 +1,9 @@
 require 'rails_helper'
-RSpec.feature "Adding distance", :type => :feature do
+
+RSpec.feature "Checkpoints", :type => :feature do
   fixtures :users, :challenge, :active_challenge
-  context "User inputs distance" do
-    scenario "from add distance page" do
+  context "Checkpoints update" do
+    scenario "when user adds distance" do
       sign_in_user_with_active_challenge
       expect(page).to have_current_path('/active-challenge')
       expect(find_by_id("checkpoint-index-0")[:class]).to_not eq("checkpoint-item complete")

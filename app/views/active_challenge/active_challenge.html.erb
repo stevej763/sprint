@@ -41,6 +41,7 @@
         <p>Have a Strava account?</p>
         <%= button_to "Link Strava", "/strava", method: :get, class: "add-distance-button" %>
       <%end%>
+      <%= button_to "Quit challenge", "/quit-challenge", method: :get, class: "add-distance-button" %>
     </div>
     <% if !@activities.empty? %>
       <div class="activities-container" id="activities">

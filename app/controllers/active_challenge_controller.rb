@@ -24,7 +24,16 @@ class ActiveChallengeController < ApplicationController
     Activity.create(activity_params)
     distance = (params.require(:activity).permit(:distance)[:distance]).to_f
     update_challenge_distance(distance)
-  end   
+  end
+
+  def quit_challenge
+    @active_challenge = user_active_challenge
+  end
+
+  def quit_challenge_confirmed
+    user_active_challenge.destroy
+    redirect_to '/'
+  end
 
   private 
 
