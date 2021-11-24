@@ -7,7 +7,13 @@ RSpec.feature "View badges on profile page:", :type => :feature do
       sign_in_existing_user
       visit("/profile")
       expect(page).to have_current_path('/profile')
-      expect(page).to have_content('Your badges')
+    end
+    scenario "User has no completed challenges" do
+      sign_in_existing_user
+      visit("/profile")
+      expect(page).to have_current_path('/profile')
+      expect(page).to have_content('Looks a little empty here, complete a challenge to show off your badges')
+      expect(page).to have_button("Pick a challenge")
     end
     scenario "to see completed challenge badge" do
       sign_in_existing_user

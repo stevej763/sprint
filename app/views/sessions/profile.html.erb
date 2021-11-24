@@ -1,13 +1,25 @@
 <main class="challenge-container">
-  <h1 class="profile-page-title">Your badges</h1>
-  <div class="challenges-container">
-    <% @completed_challenges.each do |challenge| %>
-      <div class="challenge-card">
-        <% if challenge.badge.attached?%>
-          <%= image_tag(challenge.badge, class: "profile-page-badge")%>
-        <% end %>
-        <h3><%= challenge.title %></h3>
-      </div>
-    <% end%>
-  </div>
+  <% if !@completed_challenges.empty?%>
+    <h1 class="profile-page-title">Your badges</h1>
+    <div class="challenges-container">
+      <% @completed_challenges.each do |challenge| %>
+        <div class="challenge-card">
+          <% if challenge.badge.attached?%>
+            <%= image_tag(challenge.badge, class: "profile-page-badge")%>
+          <% end %>
+          <h3><%= challenge.title %></h3>
+        </div>
+      <% end%>
+    </div>
+  <%else%>
+    <div class="no-challenge-container">
+      <%= image_tag "empty-trophy-case.png", class: "trophy-case", alt: "empty-trophy-case" %>
+      <h3> Looks a little empty here, complete a challenge to show off your badges</h3>
+      <%if current_user.active_challenge.nil?%>
+        <%= button_to "Find a challenge", '/', method: :get, class:"find-challenge-button" %>
+      <%else%>
+        <%= button_to "Go to active challenge", '/', method: :get, class:"find-challenge-button" %>
+      <%end%>
+    </div>
+  <%end%>
 </main>
