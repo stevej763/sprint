@@ -31,9 +31,10 @@ class ActiveChallengeController < ApplicationController
   end
 
   def quit_challenge_confirmed
+    challenge_title = Challenge.find_by(id: user_active_challenge.challenge_id).title
     user_active_challenge.destroy
     redirect_to '/'
-    flash[:message] = "You have quit the challenge."
+    flash[:message] = "You have quit: #{challenge_title}"
   end
 
   private 
