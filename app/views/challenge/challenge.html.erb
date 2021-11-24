@@ -20,6 +20,14 @@
         <h3>Distance</h3>
         <p><%= @challenge.distance%> miles</p>
       </div>
+      <div class="challenge-check-points">
+        <h3>Checkpoints</h3>
+        <div class="grid-container">
+          <% @challenge.checkpoints.each do |checkpoint| %>
+            <div class="grid-item"><%= checkpoint %></div>
+          <% end %>
+        </div>
+      </div>
       <hr class="challenge-ruler">
       <div class="challenge-badge-container">
         <h3>Achievement Badge</h3>

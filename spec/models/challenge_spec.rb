@@ -23,5 +23,25 @@ RSpec.describe Challenge, type: :model do
       result = Challenge.create(title: "test1")
       expect(result).to_not be_valid
     end
-  end   
+  end  
+  
+  context "calculate checkpoint completion " do 
+    let(:checkpoints) {["1","2","3","4","5"]}
+    let(:subject) { described_class.new(title:"test", distance:5.0, checkpoints: checkpoints) }
+    it "has expected checkpoints" do
+      expect(subject.checkpoints).to eq checkpoints
+    end 
+    it "completes first checkpoint" do
+      result = subject.checkpoint_complete?(1,0)
+      expect(result).to eq "complete"
+    end   
+    it "does not complete checkpoint" do
+      result = subject.checkpoint_complete?(0.5,0)
+      expect(result).to_not eq "complete"
+    end   
+    it "fills in final checkpoint" do
+      result = subject.checkpoint_complete?(5,4)
+      expect(result).to eq "complete"
+    end   
+  end     
 end

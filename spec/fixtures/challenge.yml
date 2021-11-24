@@ -4,3 +4,14 @@ challenge_one:
   description: "This is a challenge"
   difficulty: "Easy"
   distance: 10
+  checkpoints:
+    - "1"
+    - "2"
+    - "3"
+    - "4"
+    - "5"
+    - "6"
+    - "7"
+    - "8"
+    - "9"
+    - "10"

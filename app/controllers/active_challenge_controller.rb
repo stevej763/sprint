@@ -5,6 +5,7 @@ class ActiveChallengeController < ApplicationController
     @active_challenge = user_active_challenge
     @challenge = active_challenge_parent_challenge
     @remaining_distance = remaining_distance
+    @current_distance = user_active_challenge.current_distance
     @activities = user_active_challenge.activities.order(created_at: :desc)
   end
 
