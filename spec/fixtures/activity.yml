@@ -1,0 +1,13 @@
+activity_one:
+  id: 1
+  name: "My activity one"
+  distance: 2
+  completed_challenge_id: 1
+  user_id: 3
+
+activity_two:
+  id: 2
+  name: "My activity two"
+  distance: 3
+  completed_challenge_id: 1
+  user_id: 3

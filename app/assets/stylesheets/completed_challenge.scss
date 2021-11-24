@@ -15,11 +15,11 @@
 }
 
 .completed-challenge-heading {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    padding-top: 40px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 40px;
 }
 
 .view-badges-container {
@@ -45,4 +45,34 @@
   transition: ease-in 0.3s;
   box-shadow: 0 5px 5px rgba(168, 69, 81, 0.2);
   cursor: pointer;
+}
+
+.back-button {
+  background-color: #e75462;
+  margin-top: 10px;
+  margin-left: 5px;
+
+  padding: 5px 20px;
+  border-radius: 40px;
+  font-size: 1rem;
+  text-align: center;
+  color: #f1f1f1;
+  font-weight: bold;
+  max-width: 100%;
+}
+
+.back-button:hover {
+  background-color: #f1f1f1;
+  color: #e75462;
+  transition: ease-in 0.3s;
+  box-shadow: 0 5px 5px rgba(168, 69, 81, 0.2);
+  cursor: pointer;
+}
+
+.completed-challenge-heading {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 10px;
 }

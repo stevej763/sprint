@@ -2,7 +2,7 @@
   <% if logged_in? %>
     <a href="/homepage"><%= image_tag "sprint-logo-3.png", class: "logo", alt: "logo" %></a>
       <div class="navbar-profile">
-        <a href="/profile">
+        <a id="profile-link" href="/profile">
           <p id="current_user"> <%= current_user.username %></p>
           <% if current_user.profile_image.attached? %>
             <img id="user-upload" class="profile_image" src="<%=(url_for(current_user.profile_image))%>">
