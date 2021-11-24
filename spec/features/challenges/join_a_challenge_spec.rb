@@ -12,6 +12,9 @@ RSpec.feature "Joining a challenge:", :type => :feature do
       expect(page).to have_selector '#total-distance', text: '10 miles'
       expect(page).to have_selector '#current-distance', text: '0.0 miles'
       expect(page).to have_selector '#remaining-distance', text: '10.0 miles'
+      expect(page).to have_button 'Add activity'
+      expect(page).to have_content 'Have a Strava account?'
+      expect(page).to have_button 'Link Strava'
     end
   end
 end
