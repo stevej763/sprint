@@ -12,6 +12,7 @@
       <%= f.file_field :profile_image, accept: 'image/png, image/gif, image/jpeg, image/jpg', class:"profile-image-selector"%>
       <%= f.submit 'Sign up', class:"sign-up-button sign-up-page-button" %>
     <%end%>
+    <hr class="sign-in-sign-up-ruler ">
     <p>Have an account?</p>
     <%= button_to "Sign in", '/sign-in', method: :get, class:"sign-in-button sign-in-page-button" %>
   </div>

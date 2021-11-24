@@ -9,7 +9,8 @@
             <%= password_field_tag :password, params[:password], :required => true, class: "sign-in-input"  %>
             <%= submit_tag "Sign in", class:"sign-in-button sign-in-page-button"%>
          <%end%>
-      <p>Don't have an account?</p>
+         <hr class="sign-in-sign-up-ruler ">
+      <p class="option-text">Don't have an account?</p>
       <%= button_to "Sign up", '/sign-up', method: :get, class:"sign-up-button sign-up-page-button" %>
    </div>
 </section>
