@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'homepage', to: 'sessions#homepage'
   get 'profile', to: 'sessions#profile'
 
+
   get 'challenge/:id', to: 'challenge#challenge'
 
   get 'active-challenge', to: 'active_challenge#active_challenge'
@@ -23,6 +24,7 @@ Rails.application.routes.draw do
   post 'add-activity', to: 'active_challenge#update_challenge'
 
   get 'completed-challenge/:id', to: 'completed_challenge#complete'
+  get 'completed-challenge-activity-log/:id', to: 'completed_challenge#completed_challenge_log'
 
   get 'strava', to: 'strava_api#link_with_strava'
   get 'strava-oauth', to: 'strava_api#oauth'

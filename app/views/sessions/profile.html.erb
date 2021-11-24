@@ -2,12 +2,13 @@
   <% if !@completed_challenges.empty?%>
     <h1 class="profile-page-title">Your badges</h1>
     <div class="challenges-container">
-      <% @completed_challenges.each do |challenge| %>
+      <% @completed_challenges.each do |card| %>
         <div class="challenge-card">
-          <% if challenge.badge.attached?%>
-            <%= image_tag(challenge.badge, class: "profile-page-badge")%>
+          <% if card[:challenge].badge.attached?%>
+            <%= image_tag(card[:challenge].badge, class: "profile-page-badge")%>
           <% end %>
-          <h3><%= challenge.title %></h3>
+          <h3><%= card[:challenge].title %></h3>
+          <%= button_to "Activity log", "/completed-challenge-activity-log/#{card[:id]}", method: :get, class:"view-activity-log-button", id: "view-activities-challenge-#{card[:id]}" %>
         </div>
       <% end%>
     </div>

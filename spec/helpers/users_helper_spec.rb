@@ -14,6 +14,13 @@ def sign_in_user_with_active_challenge
   click_button "Sign in"
 end
 
+def sign_in_user_with_completed_challenge
+  visit("/sign-in")
+  fill_in "username", with: "user3"
+  fill_in "password", with: "password3"
+  click_button "Sign in"
+end
+
 def sign_up_user
   visit "/"
   click_button "Sign up"
