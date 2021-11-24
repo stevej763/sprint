@@ -3,7 +3,7 @@
   <div class=completed-challenge-details>
     <div class="completed-challenge-heading">
     <div>
-      <% if @challenge.badge.attached?%>
+      <% if @challenge.icon.attached?%>
         <%= image_tag(@challenge.icon, class: "challenge-icon")%>
       <%end%>
     </div>
