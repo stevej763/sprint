@@ -28,6 +28,9 @@
       <%= button_to "Add activity", "/add-activity/#{@active_challenge.id}", method: :get, class: "add-distance-button" %>
       <%if !current_user.strava_athlete_id.nil?%>
         <%= button_to "Sync Strava", "/strava/sync_activties/#{@active_challenge.id}", method: :get, class: "add-distance-button" %>
+        <%else%>
+        <p>Have a Strava account?</p>
+        <%= button_to "Link Strava", "/strava", method: :get, class: "add-distance-button" %>
       <%end%>
     </div>
     <% if !@activities.nil? %>
