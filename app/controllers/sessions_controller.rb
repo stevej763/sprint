@@ -28,7 +28,9 @@ class SessionsController < ApplicationController
     if !current_user.active_challenge.nil?
       redirect_to "/active-challenge"
     end
-    @challenges = Challenge.all
+    completed_challenge_ids = current_user.completed_challenges.map { |completed_challenge| completed_challenge.challenge_id}
+    @challenges = Challenge.all.filter { |challenge| !completed_challenge_ids.include?(challenge.id)}
+    @empty_page_message = "You are unstoppable... Watch this space!"
   end
 
   def profile
