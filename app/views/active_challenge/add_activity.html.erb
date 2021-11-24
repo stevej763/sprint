@@ -19,7 +19,7 @@
       <div class="distance-input-container">
         <%= f.label :distance, "Distance (miles):", class:"add-distance-text"%>
       </div>
-        <%= f.number_field :distance, :required => true,  placeholder:"0.00", step: :any, min: "0.00", class:"distance-input" %>
+        <%= f.number_field :distance, :required => true,  placeholder:"0.00", step: :any, min: "0.00", value:"", class:"distance-input" %>
         <%= f.hidden_field :active_challenge_id, value: @active_challenge_id %>
         <%= f.hidden_field :user_id, value: current_user.id %>
 
