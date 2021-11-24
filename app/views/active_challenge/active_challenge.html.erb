@@ -4,7 +4,7 @@
   <h2 class="checkpoint-title">Checkpoints</h2>
   <div class="checkpoint-container">
     <% @challenge.checkpoints.each_with_index do |checkpoint, index| %>
-      <div class="checkpoint-item <%=@challenge.complete?(@current_distance, index)%>">
+      <div class="checkpoint-item <%=@challenge.checkpoint_complete?(@current_distance, index)%>">
         <p><%= checkpoint %></p>
       </div>
     <% end %>

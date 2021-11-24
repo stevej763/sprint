@@ -3,7 +3,7 @@ class Challenge < ApplicationRecord
     has_one_attached :badge
     has_one_attached :icon
 
-    def complete?(current_distance, index)
+    def checkpoint_complete?(current_distance, index)
         if current_distance >= self.calcualte_target_distance(index)
             "complete"
         end
