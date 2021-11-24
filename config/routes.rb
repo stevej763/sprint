@@ -16,6 +16,9 @@ Rails.application.routes.draw do
 
   get 'active-challenge', to: 'active_challenge#active_challenge'
   post 'join-challenge', to: 'active_challenge#create'
+
+  get 'quit-challenge', to: 'active_challenge#quit_challenge'
+  delete 'quit-challenge-confirmed', to: 'active_challenge#quit_challenge_confirmed'
   
   get 'add-activity/:id', to: 'active_challenge#add_activity'
   post 'add-activity', to: 'active_challenge#update_challenge'
