@@ -16,13 +16,13 @@ fuji_description = "Japan’s Mt. Fuji is an active volcano about 100 kilometers
 fuji_checkpoint = ["Lake Kawaguchi","Lake Motosu","Lake Sai","Lake Shōji","Lake Yamanaka","Mount Fuji summit"]
 space_station_description = "Ever wanted to be an astronaut? Here's your chance to travel to the space station!"
 space_station_checkpoint = ["Trosposphere","Stratosphere","Mesosphere","Thermosphere","Ionosphere","Exosphere"]
-run_rabbit_run_description = ["Can you take on the Run Rabbit Run challenge and evade capture? Collect your rabbit friends along the way but watch out for that gardener, Mr McGregor!"]
+run_rabbit_run_description = "Can you take on the Run Rabbit Run challenge and evade capture? Collect your rabbit friends along the way but watch out for that gardener, Mr McGregor!"
 run_rabbit_run_checkpoint = ["Benjamin Bunny","Flopsy Rabbit","Mopsy Rabbit","Cottontail Rabbit","Peter Rabbit"]
-dinosaur_description = ["Get ready to roar with dinosaurs for this half marathon! Can you collect them all?"]
+dinosaur_description = "Get ready to roar with dinosaurs for this half marathon! Can you collect them all?"
 dinosaur_checkpoint = ["Velociraptor","Triceratops","Stegosaurus","Allosaurus","Tyrannosaurus Rex","Brachiosaurus"]
-hadrians_wall_description = ["Hadrian's Wall was built by the Roman army on the orders of the emperor Hadrian following his visit to Britain in AD 122. It crosses northern Britain from Wallsend on the River Tyne in the east to Bowness-on-Solway in the west. The wall is under attack. Do you have what it takes to deliver messages to each checkpoint in time?"]
+hadrians_wall_description = "Hadrian's Wall was built by the Roman army on the orders of the emperor Hadrian following his visit to Britain in AD 122. It crosses northern Britain from Wallsend on the River Tyne in the east to Bowness-on-Solway in the west. The wall is under attack. Do you have what it takes to deliver messages to each checkpoint in time?"
 hadrians_wall_checkpoint = ["Wallsend","Heddon-on-the-Wall","Chollerford","Steel Rigg","Walton","Carlisle","Bowness-on-Solway"]
-north_coast_500_description = ["Join a spectacular 500 mile journey through the Scottish Highlands — a scenic route that has it all, from sandy beaches to beautiful castles and diverse wildlife. What are you waiting for? Let's do it!"]
+north_coast_500_description = "Join a spectacular 500 mile journey through the Scottish Highlands — a scenic route that has it all, from sandy beaches to beautiful castles and diverse wildlife. What are you waiting for? Let's do it!"
 north_coast_500_checkpoint = ["Inverness (Start)","Dornoch","Wick","Tongue","Lochinver","Ullapool","Kinlochewe","Inverness (End)"]
 
 
@@ -31,7 +31,7 @@ add_challenge_to_db('Marathon to Athens', marathon_description, "Medium", 26.0, 
 add_challenge_to_db('Mount Fuji', fuji_description, "Hard", 46.0, 'template_images/fuji/badge.png', 'template_images/fuji/icon.jpeg',fuji_checkpoint)
 add_challenge_to_db('Space Station', space_station_description, "Insane!", 254.0, 'template_images/space/badge.png', 'template_images/space/icon.png',space_station_checkpoint)
 add_challenge_to_db('Run Rabbit Run!', run_rabbit_run_description, "Easy", 3.2, 'template_images/rabbit/badge.png', 'template_images/rabbit/icon.png', run_rabbit_run_checkpoint)
-add_challenge_to_db('Dinosaur Hunter', dinosaur_description, "Medium", 13.1, 'template_images/dinosaur/badge.png', 'template_images/dinosaur/icon.png', dinosaur_checkpoint)
-add_challenge_to_db("Hadrian's Wall", hadrians_wall_description, "Difficult", 73.0, 'template_images/hadrians_wall/badge.png', 'template_images/hadrians_wall/icon.png', hadrians_wall_checkpoint)
-add_challenge_to_db('North Coast 500', north_coast_500_description, "Insane!", 500, 'template_images/north_coast_500/badge.png', 'template_images/north_coast_500/icon.png', north_coast_500_checkpoint)
+add_challenge_to_db('Dinosaur Hunter', dinosaur_description, "Medium", 13.1, 'template_images/dinosaur/badge.jpg', 'template_images/dinosaur/icon.jpg', dinosaur_checkpoint)
+add_challenge_to_db("Hadrian's Wall", hadrians_wall_description, "Difficult", 73.0, 'template_images/hadrians_wall/badge.jpg', 'template_images/hadrians_wall/icon.jpg', hadrians_wall_checkpoint)
+add_challenge_to_db('North Coast 500', north_coast_500_description, "Insane!", 500, 'template_images/north_coast_500/badge.jpg', 'template_images/north_coast_500/icon.jpg', north_coast_500_checkpoint)
 
