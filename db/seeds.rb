@@ -26,12 +26,12 @@ north_coast_500_description = "Join a spectacular 500 mile journey through the S
 north_coast_500_checkpoint = ["Inverness (Start)","Dornoch","Wick","Tongue","Lochinver","Ullapool","Kinlochewe","Inverness (End)"]
 
 
-add_challenge_to_db('Hunt the Horcruxes', hp_description, "Easy", 7.0, 'template_images/harry_potter/badge.png', 'template_images/harry_potter/icon.png',hp_checkpoint)
-add_challenge_to_db('Marathon to Athens', marathon_description, "Medium", 26.0, 'template_images/marathon/badge.png', 'template_images/marathon/icon.png',marathon_checkpoint)
-add_challenge_to_db('Mount Fuji', fuji_description, "Hard", 46.0, 'template_images/fuji/badge.png', 'template_images/fuji/icon.jpeg',fuji_checkpoint)
-add_challenge_to_db('Space Station', space_station_description, "Insane!", 254.0, 'template_images/space/badge.png', 'template_images/space/icon.png',space_station_checkpoint)
 add_challenge_to_db('Run Rabbit Run!', run_rabbit_run_description, "Easy", 3.2, 'template_images/rabbit/badge.png', 'template_images/rabbit/icon.png', run_rabbit_run_checkpoint)
+add_challenge_to_db('Hunt the Horcruxes', hp_description, "Easy", 7.0, 'template_images/harry_potter/badge.png', 'template_images/harry_potter/icon.png',hp_checkpoint)
 add_challenge_to_db('Dinosaur Hunter', dinosaur_description, "Medium", 13.1, 'template_images/dinosaur/badge.jpg', 'template_images/dinosaur/icon.jpg', dinosaur_checkpoint)
+add_challenge_to_db('Marathon to Athens', marathon_description, "Medium", 26.0, 'template_images/marathon/badge.png', 'template_images/marathon/icon.png',marathon_checkpoint)
+add_challenge_to_db('Mount Fuji', fuji_description, "Difficult", 46.0, 'template_images/fuji/badge.png', 'template_images/fuji/icon.jpeg',fuji_checkpoint)
 add_challenge_to_db("Hadrian's Wall", hadrians_wall_description, "Difficult", 73.0, 'template_images/hadrians_wall/badge.jpg', 'template_images/hadrians_wall/icon.jpg', hadrians_wall_checkpoint)
+add_challenge_to_db('Space Station', space_station_description, "Insane!", 254.0, 'template_images/space/badge.png', 'template_images/space/icon.png',space_station_checkpoint)
 add_challenge_to_db('North Coast 500', north_coast_500_description, "Insane!", 500, 'template_images/north_coast_500/badge.jpg', 'template_images/north_coast_500/icon.jpg', north_coast_500_checkpoint)
 
